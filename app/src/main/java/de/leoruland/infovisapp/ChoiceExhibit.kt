@@ -37,7 +37,7 @@ class ChoiceExhibit : Fragment() {
         }
 
         binding.fabCheck.setOnClickListener {
-            findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_ChoiceTopicFragment)
+            findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_DetailExhibitFragment)
         }
     }
 
