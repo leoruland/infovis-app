@@ -1,0 +1,33 @@
+# Built application files
+*.apk
+*.ap_
+*.class
+
+#gradle file
+.gradle
+build/
+gen/
+*/build/
+
+#local properties
+local.properties
+
+# Android Studio
+.navigation/
+.idea/
+*.iml
+captures/
+.externalNativeBuild
+
+#OS file
+.DS_Store
+
+#Log files
+*.log
+
+#hpro files
+*.hprof
+uitests/pacts/
+
+# folder may be generated when running pacttest locally on ide
+**/target
