@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentChoiceTopicBinding
 import de.leoruland.infovisapp.model.ExhibitsRepository
+import de.leoruland.infovisapp.model.TopicsChoiceStore
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -24,6 +25,10 @@ class ChoiceTopic : Fragment() {
 
     private val topicAdapter = TopicAdapter(ExhibitsRepository.getTopics())
 
+    init {
+        TopicsChoiceStore.clearStore()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +36,6 @@ class ChoiceTopic : Fragment() {
 
         _binding = FragmentChoiceTopicBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

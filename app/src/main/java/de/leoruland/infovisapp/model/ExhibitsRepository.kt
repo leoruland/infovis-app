@@ -7,13 +7,39 @@ import com.google.gson.reflect.TypeToken
 import java.io.IOException
 
 object ExhibitsRepository {
-    private const val TAG = "TopicStore"
+    private const val TAG = "ExhibitsStore"
 
-    private lateinit var topics: List<String>
+    private lateinit var exhibits: List<Exhibit>
+    private lateinit var topics: List<Topic>
 
-    fun getTopics(): List<String> {
+    fun getTopics(): List<Topic> {
 //        loadTopics() // TODO insert context
         return topics
+    }
+
+    fun getExhibits(): List<Exhibit> {
+//        loadExhibits() // TODO insert context
+        return exhibits
+    }
+
+    fun getExhibitsWith(topics: List<Topic>): List<Exhibit> {
+        var exhibits = mutableListOf<Exhibit>()
+
+        this.exhibits.map { exhibit ->
+            exhibit.topics.forEach { topic ->
+                if (topics.contains(topic) && !exhibits.contains(exhibit))
+                    exhibits.add(exhibit)
+            }
+        }
+
+        return exhibits
+    }
+
+    fun loadExhibits(context: Context) {
+        val gson = Gson()
+        val json = loadJSONFromAsset("exhibits.json", context)
+        val listType = object : TypeToken<List<Exhibit>>() {}.type
+        exhibits = gson.fromJson(json, listType)
     }
 
     fun loadTopics(context: Context) {
@@ -25,15 +51,15 @@ object ExhibitsRepository {
             listType
         )
 
-        val tempTopics: MutableList<String> = mutableListOf()
+        val topics: MutableList<Topic> = mutableListOf()
         exhibits.map { exhibit ->
             exhibit.topics.forEach { topic ->
-                if (!tempTopics.contains(topic))
-                    tempTopics.add(topic)
+                if (!topics.contains(topic))
+                    topics.add(topic)
             }
         }
 
-        topics = tempTopics
+        this.topics = topics
     }
 
     /**

@@ -8,6 +8,7 @@ class InfovisApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        ExhibitsRepository.loadExhibits(this)
         ExhibitsRepository.loadTopics(this)
     }
 }

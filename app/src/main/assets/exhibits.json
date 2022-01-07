@@ -2,17 +2,29 @@
   {
     "name": "Bronzekanne aus Dambach",
     "topics": [
-      "Dambach",
-      "Kanne",
-      "Bronze"
+      {
+        "name": "Dambach"
+      },
+      {
+        "name": "Kanne"
+      },
+      {
+        "name": "Bronze"
+      }
     ]
   },
   {
     "name": "Keramikkanne aus Athen",
     "topics": [
-      "Athen",
-      "Kanne",
-      "Keramik"
+      {
+        "name": "Athen"
+      },
+      {
+        "name": "Kanne"
+      },
+      {
+        "name": "Keramik"
+      }
     ]
   }
 ]

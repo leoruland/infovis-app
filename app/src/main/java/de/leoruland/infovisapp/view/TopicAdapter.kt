@@ -8,23 +8,24 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
+import de.leoruland.infovisapp.model.Topic
 import de.leoruland.infovisapp.model.TopicsChoiceStore
 
-class TopicAdapter(private val topics: List<String>) :
+class TopicAdapter(private val topics: List<Topic>) :
     RecyclerView.Adapter<TopicAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : View.OnClickListener, RecyclerView.ViewHolder(itemView) {
-        private lateinit var topic: String
+        private lateinit var topic: Topic
         private var isChecked = false
 
         init {
             itemView.setOnClickListener(this)
         }
 
-        fun bind(topic: String) {
+        fun bind(topic: Topic) {
             this.topic = topic
             val itemTitle: TextView = itemView.findViewById(R.id.topicTitle)
-            itemTitle.text = topic
+            itemTitle.text = topic.name
         }
 
         override fun onClick(view: View?) {

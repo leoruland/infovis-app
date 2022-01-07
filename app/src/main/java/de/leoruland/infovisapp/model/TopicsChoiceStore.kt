@@ -1,21 +1,25 @@
 package de.leoruland.infovisapp.model
 
 object TopicsChoiceStore {
-    private var topics: List<String> = listOf()
+    private var topics: List<Topic> = listOf()
 
-    fun getTopics(): List<String> = topics
+    fun getTopics(): List<Topic> = topics
 
-    fun addTopic(topic: String) {
-        val tempTopics = if (topics.isNotEmpty()) topics as MutableList<String> else mutableListOf()
+    fun addTopic(topic: Topic) {
+        val tempTopics = if (topics.isNotEmpty()) topics as MutableList<Topic> else mutableListOf()
         tempTopics.add(topic)
         topics = tempTopics
     }
 
-    fun removeTopic(topic: String): Boolean {
-        val tempTopics = if (topics.isNotEmpty()) topics as MutableList<String> else mutableListOf()
+    fun removeTopic(topic: Topic): Boolean {
+        val tempTopics = if (topics.isNotEmpty()) topics as MutableList<Topic> else mutableListOf()
         return if (tempTopics.contains(topic)) {
             tempTopics.remove(topic)
             true
         } else false
+    }
+
+    fun clearStore() {
+        topics = listOf()
     }
 }
