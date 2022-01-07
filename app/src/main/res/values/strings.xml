@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">infovis-app</string>
+    <string name="app_name">Infovis App</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="choice_topic_label">Topic Choice Fragment</string>

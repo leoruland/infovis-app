@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentChoiceTopicBinding
 import de.leoruland.infovisapp.model.ExhibitsRepository
-import de.leoruland.infovisapp.model.TopicsChoiceStore
+import de.leoruland.infovisapp.viewmodel.TopicsChoiceStore
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -44,7 +44,6 @@ class ChoiceTopic : Fragment() {
         binding.topicRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding.topicRecyclerView.adapter = topicAdapter
 
-        binding.fabBack.hide()
         binding.fabCheck.setOnClickListener {
             findNavController().navigate(R.id.action_ChoiceTopicFragment_to_ChoiceExhibitFragment)
         }

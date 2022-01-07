@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.model.Topic
-import de.leoruland.infovisapp.model.TopicsChoiceStore
+import de.leoruland.infovisapp.viewmodel.TopicsChoiceStore
 
 class TopicAdapter(private val topics: List<Topic>) :
     RecyclerView.Adapter<TopicAdapter.ViewHolder>() {

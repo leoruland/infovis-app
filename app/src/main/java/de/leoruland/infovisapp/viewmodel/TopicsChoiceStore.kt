@@ -1,4 +1,6 @@
-package de.leoruland.infovisapp.model
+package de.leoruland.infovisapp.viewmodel
+
+import de.leoruland.infovisapp.model.Topic
 
 object TopicsChoiceStore {
     private var topics: List<Topic> = listOf()
