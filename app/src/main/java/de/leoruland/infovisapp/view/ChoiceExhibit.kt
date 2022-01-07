@@ -44,9 +44,6 @@ class ChoiceExhibit : Fragment() {
         binding.fabBack.setOnClickListener {
             findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_ChoiceTopicFragment)
         }
-        binding.fabCheck.setOnClickListener {
-            findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_DetailExhibitFragment)
-        }
     }
 
     override fun onDestroyView() {

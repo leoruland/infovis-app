@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentDetailExhibitBinding
+import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStore
 
 class DetailExhibit : Fragment() {
     private var _binding: FragmentDetailExhibitBinding? = null
@@ -25,8 +26,7 @@ class DetailExhibit : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.fabCheck.hide()
-
+        binding.exhibitTitle.text = ExhibitChoiceStore.getExhibit()?.name
         binding.fabBack.setOnClickListener {
             findNavController().navigate(R.id.action_DetailExhibitFragment_to_ChoiceExhibitFragment)
         }
