@@ -1,17 +1,17 @@
-package de.leoruland.infovisapp.ui
+package de.leoruland.infovisapp.view
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
-import de.leoruland.infovisapp.inflate
 
 class TopicAdapter(private val topics: List<String>) :
     RecyclerView.Adapter<TopicAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        
+
         fun bind(topic: String) {
             val title: TextView = itemView.findViewById(R.id.topicTitle)
             title.text = topic
@@ -19,7 +19,8 @@ class TopicAdapter(private val topics: List<String>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(parent.inflate(R.layout.list_item_topic))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.list_item_topic, parent, false))
+//        return ViewHolder(parent.inflate(R.layout.list_item_topic))
     }
 
     override fun getItemCount() = topics.size

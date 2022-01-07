@@ -6,12 +6,15 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
 
-object TopicStore {
+object ExhibitsRepository {
     private const val TAG = "TopicStore"
 
     private lateinit var topics: List<String>
 
-    fun getTopics() = topics
+    fun getTopics(): List<String> {
+//        loadTopics() // TODO insert context
+        return topics
+    }
 
     fun loadTopics(context: Context) {
         val gson = Gson()
@@ -31,7 +34,6 @@ object TopicStore {
         }
 
         topics = tempTopics
-        Log.v(TAG, "Found ${topics.size} topic items")
     }
 
     /**

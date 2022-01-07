@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp
+package de.leoruland.infovisapp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentChoiceExhibitBinding
 
 /**
@@ -35,7 +36,6 @@ class ChoiceExhibit : Fragment() {
         binding.fabBack.setOnClickListener {
             findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_ChoiceTopicFragment)
         }
-
         binding.fabCheck.setOnClickListener {
             findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_DetailExhibitFragment)
         }

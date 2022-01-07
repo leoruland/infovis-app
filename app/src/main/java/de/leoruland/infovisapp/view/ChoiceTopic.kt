@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp
+package de.leoruland.infovisapp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentChoiceTopicBinding
-import de.leoruland.infovisapp.model.TopicStore
-import de.leoruland.infovisapp.ui.TopicAdapter
+import de.leoruland.infovisapp.model.ExhibitsRepository
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -22,7 +22,7 @@ class ChoiceTopic : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private val topicAdapter = TopicAdapter(TopicStore.getTopics())
+    private val topicAdapter = TopicAdapter(ExhibitsRepository.getTopics())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,11 +40,10 @@ class ChoiceTopic : Fragment() {
         binding.topicRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding.topicRecyclerView.adapter = topicAdapter
 
+        binding.fabBack.hide()
         binding.fabCheck.setOnClickListener {
             findNavController().navigate(R.id.action_ChoiceTopicFragment_to_ChoiceExhibitFragment)
         }
-
-        binding.fabBack.hide()
     }
 
     override fun onDestroyView() {
