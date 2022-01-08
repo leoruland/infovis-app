@@ -8,54 +8,42 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import de.leoruland.infovisapp.R
-import de.leoruland.infovisapp.databinding.FragmentChoiceTopicBinding
+import de.leoruland.infovisapp.databinding.FragmentChoiceExhibitBinding
 import de.leoruland.infovisapp.model.ExhibitsRepository
 import de.leoruland.infovisapp.viewmodel.TopicsChoiceStateHolder
 
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class ChoiceTopic : Fragment() {
+class ChoiceExhibitFragment : Fragment() {
 
-    private var _binding: FragmentChoiceTopicBinding? = null
+    private var _binding: FragmentChoiceExhibitBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private val topicAdapter = TopicAdapter(ExhibitsRepository.getTopics())
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        TopicsChoiceStateHolder.clearStore()
-    }
-//    init {
-//        TopicsChoiceStateHolder.clearStore()
-//    }
+    private val exhibitAdapter =
+        ExhibitAdapter(ExhibitsRepository.getExhibits(TopicsChoiceStateHolder.getTopics()))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentChoiceTopicBinding.inflate(inflater, container, false)
+        _binding = FragmentChoiceExhibitBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.topicRecyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.topicRecyclerView.adapter = topicAdapter
+        binding.exhibitRecyclerView.layoutManager = LinearLayoutManager(activity)
+        binding.exhibitRecyclerView.adapter = exhibitAdapter
 
-        binding.fabCheck.setOnClickListener {
-            findNavController().navigate(R.id.action_ChoiceTopicFragment_to_ChoiceExhibitFragment)
+        binding.fabBack.setOnClickListener {
+            findNavController().navigateUp()
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        TopicsChoiceStateHolder.clearStore()
     }
 
     override fun onDestroyView() {

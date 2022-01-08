@@ -6,18 +6,18 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
 
-object ExhibitsRepository {
+object ExhibitsRepository : ExhibitsRepositoryInterface {
     private const val TAG = "ExhibitsStore"
 
     private lateinit var exhibits: List<Exhibit>
     private lateinit var topics: List<Topic>
 
-    fun getTopics(): List<Topic> {
+    override fun getTopics(): List<Topic> {
 //        loadTopics() // TODO insert context
         return topics
     }
 
-    fun getExhibits(topics: List<Topic>?, listInclusive: Boolean = true): List<Exhibit> {
+    override fun getExhibits(topics: List<Topic>?, listInclusive: Boolean): List<Exhibit> {
         return if (topics != null) {
             var exhibits = mutableListOf<Exhibit>()
             this.exhibits.map { exhibit ->
@@ -33,14 +33,14 @@ object ExhibitsRepository {
         } else exhibits
     }
 
-    fun loadExhibits(context: Context) {
+    override fun loadExhibits(context: Context) {
         val gson = Gson()
         val json = loadJSONFromAsset("exhibits.json", context)
         val listType = object : TypeToken<List<Exhibit>>() {}.type
         exhibits = gson.fromJson(json, listType)
     }
 
-    fun loadTopics(context: Context) {
+    override fun loadTopics(context: Context) {
         val gson = Gson()
         val json = loadJSONFromAsset("exhibits.json", context)
         val listType = object : TypeToken<List<Exhibit>>() {}.type

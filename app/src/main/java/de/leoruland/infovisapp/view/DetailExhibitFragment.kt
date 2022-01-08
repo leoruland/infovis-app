@@ -10,7 +10,7 @@ import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentDetailExhibitBinding
 import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStateHolder
 
-class DetailExhibit : Fragment() {
+class DetailExhibitFragment : Fragment() {
     private var _binding: FragmentDetailExhibitBinding? = null
     private val binding get() = _binding!!
 
