@@ -10,8 +10,4 @@ object ExhibitChoiceStateHolder {
     fun setExhibit(exhibit: Exhibit) {
         this.exhibit = exhibit
     }
-
-    fun clearExhibit() {
-        exhibit = null
-    }
 }
