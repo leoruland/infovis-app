@@ -16,8 +16,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_half"
             android:text="@string/app_name"
-            android:textAlignment="center"
-            android:textSize="30sp"
+            android:textSize="@dimen/caption_text_size"
             android:textStyle="bold" />
 
     </com.google.android.material.appbar.AppBarLayout>
