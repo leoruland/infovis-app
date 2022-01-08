@@ -42,7 +42,7 @@ class ChoiceExhibit : Fragment() {
         binding.exhibitRecyclerView.adapter = exhibitAdapter
 
         binding.fabBack.setOnClickListener {
-            findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_ChoiceTopicFragment)
+            findNavController().navigateUp()
         }
     }
 

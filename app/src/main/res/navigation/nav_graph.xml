@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/ChoiceTopicFragment">
-
     <fragment
         android:id="@+id/ChoiceTopicFragment"
         android:name="de.leoruland.infovisapp.view.ChoiceTopic"
@@ -20,10 +19,6 @@
         android:name="de.leoruland.infovisapp.view.ChoiceExhibit"
         android:label="@string/choice_exhibit_title"
         tools:layout="@layout/fragment_choice_exhibit">
-
-        <action
-            android:id="@+id/action_ChoiceExhibitFragment_to_ChoiceTopicFragment"
-            app:destination="@id/ChoiceTopicFragment" />
         <action
             android:id="@+id/action_ChoiceExhibitFragment_to_DetailExhibitFragment"
             app:destination="@id/DetailExhibitFragment" />
@@ -32,10 +27,5 @@
         android:id="@+id/DetailExhibitFragment"
         android:name="de.leoruland.infovisapp.view.DetailExhibit"
         android:label="@string/detail_exhibit_title"
-        tools:layout="@layout/fragment_detail_exhibit">
-
-        <action
-            android:id="@+id/action_DetailExhibitFragment_to_ChoiceExhibitFragment"
-            app:destination="@id/ChoiceExhibitFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_detail_exhibit" />
 </navigation>

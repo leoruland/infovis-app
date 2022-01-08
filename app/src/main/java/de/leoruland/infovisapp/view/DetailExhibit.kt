@@ -28,7 +28,7 @@ class DetailExhibit : Fragment() {
 
         binding.exhibitTitle.text = ExhibitChoiceStateHolder.getExhibit()?.name
         binding.fabBack.setOnClickListener {
-            findNavController().navigate(R.id.action_DetailExhibitFragment_to_ChoiceExhibitFragment)
+            findNavController().navigateUp()
         }
     }
 }
