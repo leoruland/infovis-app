@@ -2,7 +2,7 @@ package de.leoruland.infovisapp.viewmodel
 
 import de.leoruland.infovisapp.model.Topic
 
-object TopicsChoiceStore {
+object TopicsChoiceStateHolder {
     private var topics: List<Topic> = listOf()
 
     fun getTopics(): List<Topic> = topics

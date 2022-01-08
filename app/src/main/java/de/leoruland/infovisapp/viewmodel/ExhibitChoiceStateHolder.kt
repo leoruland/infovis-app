@@ -2,7 +2,7 @@ package de.leoruland.infovisapp.viewmodel
 
 import de.leoruland.infovisapp.model.Exhibit
 
-object ExhibitChoiceStore {
+object ExhibitChoiceStateHolder {
     private var exhibit: Exhibit? = null
 
     fun getExhibit() = exhibit

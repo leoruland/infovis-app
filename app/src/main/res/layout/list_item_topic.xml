@@ -30,7 +30,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/list_item_topic_text" />
+            tools:text="@string/tool_text_list_item_topic" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

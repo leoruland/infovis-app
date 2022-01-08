@@ -17,27 +17,20 @@ object ExhibitsRepository {
         return topics
     }
 
-    fun getExhibits(): List<Exhibit> {
-//        loadExhibits() // TODO insert context
-        return exhibits
-    }
-
-    fun getExhibitsWith(topics: List<Topic>, listInclusive: Boolean = true): List<Exhibit> {
-        var exhibits = mutableListOf<Exhibit>()
-
-        this.exhibits.map { exhibit ->
-            if (listInclusive) {
-                exhibit.topics.forEach { topic ->
-                    if (topics.contains(topic) && !exhibits.contains(exhibit))
-                        exhibits.add(exhibit)
-                }
-            } else {
-                if (exhibit.topics.containsAll(topics) && !exhibits.contains(exhibit))
+    fun getExhibits(topics: List<Topic>?, listInclusive: Boolean = true): List<Exhibit> {
+        return if (topics != null) {
+            var exhibits = mutableListOf<Exhibit>()
+            this.exhibits.map { exhibit ->
+                if (listInclusive) {
+                    exhibit.topics.forEach { topic ->
+                        if (topics.contains(topic) && !exhibits.contains(exhibit))
+                            exhibits.add(exhibit)
+                    }
+                } else if (exhibit.topics.containsAll(topics) && !exhibits.contains(exhibit))
                     exhibits.add(exhibit)
             }
-        }
-
-        return exhibits
+            exhibits
+        } else exhibits
     }
 
     fun loadExhibits(context: Context) {

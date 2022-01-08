@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.model.Topic
-import de.leoruland.infovisapp.viewmodel.TopicsChoiceStore
+import de.leoruland.infovisapp.viewmodel.TopicsChoiceStateHolder
 
 class TopicAdapter(private val topics: List<Topic>) :
     RecyclerView.Adapter<TopicAdapter.ViewHolder>() {
@@ -33,11 +33,11 @@ class TopicAdapter(private val topics: List<Topic>) :
             val topicCard: CardView = itemView.findViewById(R.id.topic_card)
             isChecked = !isChecked
             if (isChecked) {
-                TopicsChoiceStore.addTopic(topic)
+                TopicsChoiceStateHolder.addTopic(topic)
                 itemTitle.setTextColor(Color.parseColor("#FFFFFF"))
                 topicCard.setCardBackgroundColor(Color.parseColor("#A10040"))
             } else {
-                TopicsChoiceStore.removeTopic(topic)
+                TopicsChoiceStateHolder.removeTopic(topic)
                 itemTitle.setTextColor(Color.parseColor("#000000"))
                 topicCard.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
             }

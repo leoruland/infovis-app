@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentChoiceExhibitBinding
 import de.leoruland.infovisapp.model.ExhibitsRepository
-import de.leoruland.infovisapp.viewmodel.TopicsChoiceStore
+import de.leoruland.infovisapp.viewmodel.TopicsChoiceStateHolder
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -24,7 +24,7 @@ class ChoiceExhibit : Fragment() {
     private val binding get() = _binding!!
 
     private val exhibitAdapter =
-        ExhibitAdapter(ExhibitsRepository.getExhibitsWith(TopicsChoiceStore.getTopics()))
+        ExhibitAdapter(ExhibitsRepository.getExhibits(TopicsChoiceStateHolder.getTopics()))
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

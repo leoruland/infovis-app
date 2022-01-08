@@ -4,14 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.model.Exhibit
-import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStore
+import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStateHolder
 
 class ExhibitAdapter(private val exhibits: List<Exhibit>) :
     RecyclerView.Adapter<ExhibitAdapter.ViewHolder>() {
@@ -30,7 +27,7 @@ class ExhibitAdapter(private val exhibits: List<Exhibit>) :
         }
 
         override fun onClick(view: View?) {
-            ExhibitChoiceStore.setExhibit(exhibit)
+            ExhibitChoiceStateHolder.setExhibit(exhibit)
             itemView.findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_DetailExhibitFragment)
         }
     }

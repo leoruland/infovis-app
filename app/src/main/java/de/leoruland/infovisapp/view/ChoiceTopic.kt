@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentChoiceTopicBinding
 import de.leoruland.infovisapp.model.ExhibitsRepository
-import de.leoruland.infovisapp.viewmodel.TopicsChoiceStore
+import de.leoruland.infovisapp.viewmodel.TopicsChoiceStateHolder
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -25,9 +25,13 @@ class ChoiceTopic : Fragment() {
 
     private val topicAdapter = TopicAdapter(ExhibitsRepository.getTopics())
 
-    init {
-        TopicsChoiceStore.clearStore()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        TopicsChoiceStateHolder.clearStore()
     }
+//    init {
+//        TopicsChoiceStateHolder.clearStore()
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +51,11 @@ class ChoiceTopic : Fragment() {
         binding.fabCheck.setOnClickListener {
             findNavController().navigate(R.id.action_ChoiceTopicFragment_to_ChoiceExhibitFragment)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        TopicsChoiceStateHolder.clearStore()
     }
 
     override fun onDestroyView() {
