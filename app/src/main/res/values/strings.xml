@@ -1,12 +1,9 @@
 <resources>
     <string name="app_name">Xhibit Cruiser 2000</string>
-    <string name="action_settings">Settings</string>
     <string name="choice_topic_title">Topic choice</string>
     <string name="choice_exhibit_title">Exhibit choice</string>
     <string name="detail_exhibit_title">Exhibit detail</string>
-    <string name="direct_number_input_title">Enter exhibit number</string>
-    <string name="search_button_text">Search</string>
-    <string name="error_object_not_found">Object with Id %s does not exists</string>
-    <string name="tool_text_list_item_topic">Hot Topic</string>
-    <string name="tool_text_list_item_exhibit">Exhibition piece</string>
+    <string name="direct_number_input_title">Enter exhibit Id</string>
+    <string name="enter_button_text">Enter</string>
+    <string name="error_object_not_found">Object with Id %s can not be found.</string>
 </resources>
