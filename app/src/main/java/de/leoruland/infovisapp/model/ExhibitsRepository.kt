@@ -12,27 +12,6 @@ object ExhibitsRepository : ExhibitsRepositoryInterface {
     private lateinit var exhibits: List<Exhibit>
     private lateinit var topics: List<Topic>
 
-    override fun getTopics(): List<Topic> {
-//        loadTopics() // TODO insert context
-        return topics
-    }
-
-    override fun getExhibits(topics: List<Topic>?, listInclusive: Boolean): List<Exhibit> {
-        return if (topics != null) {
-            var exhibits = mutableListOf<Exhibit>()
-            this.exhibits.map { exhibit ->
-                if (listInclusive) {
-                    exhibit.topics.forEach { topic ->
-                        if (topics.contains(topic) && !exhibits.contains(exhibit))
-                            exhibits.add(exhibit)
-                    }
-                } else if (exhibit.topics.containsAll(topics) && !exhibits.contains(exhibit))
-                    exhibits.add(exhibit)
-            }
-            exhibits
-        } else exhibits
-    }
-
     override fun loadExhibits(context: Context) {
         val gson = Gson()
         val json = loadJSONFromAsset("exhibits.json", context)
@@ -78,4 +57,29 @@ object ExhibitsRepository : ExhibitsRepositoryInterface {
         return json
     }
 
+    override fun getTopics(): List<Topic> {
+//        loadTopics() // TODO insert context
+        return topics
+    }
+
+    override fun getExhibits(topics: List<Topic>?, listInclusive: Boolean): List<Exhibit> {
+        return if (topics != null) {
+            var exhibits = mutableListOf<Exhibit>()
+            this.exhibits.map { exhibit ->
+                if (listInclusive) {
+                    exhibit.topics.forEach { topic ->
+                        if (topics.contains(topic) && !exhibits.contains(exhibit))
+                            exhibits.add(exhibit)
+                    }
+                } else if (exhibit.topics.containsAll(topics) && !exhibits.contains(exhibit))
+                    exhibits.add(exhibit)
+            }
+            exhibits
+        } else exhibits
+    }
+
+    override fun getExhibit(id: String): Exhibit? {
+        exhibits.forEach { if (it.id == id) return it }
+        return null
+    }
 }

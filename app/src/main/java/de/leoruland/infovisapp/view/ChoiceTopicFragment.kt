@@ -38,7 +38,9 @@ class ChoiceTopicFragment : Fragment() {
         binding.topicRecyclerView.adapter = topicAdapter
 
         binding.fabCheck.setOnClickListener {
-            findNavController().navigate(R.id.action_ChoiceTopicFragment_to_ChoiceExhibitFragment)
+            if (!TopicsChoiceStateHolder.isEmpty()) {
+                findNavController().navigate(R.id.action_ChoiceTopicFragment_to_ChoiceExhibitFragment)
+            }
         }
         binding.fabNumberinput.setOnClickListener {
             findNavController().navigate(R.id.action_ChoiceTopicFragment_to_DirectNumberInputFragment)

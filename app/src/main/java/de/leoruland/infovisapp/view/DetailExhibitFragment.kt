@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentDetailExhibitBinding
 import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStateHolder
+import de.leoruland.infovisapp.viewmodel.TopicsChoiceStateHolder
 
 class DetailExhibitFragment : Fragment() {
     private var _binding: FragmentDetailExhibitBinding? = null
@@ -25,9 +26,11 @@ class DetailExhibitFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.exhibitTitle.text = ExhibitChoiceStateHolder.getExhibit()?.name
+        binding.exhibitTitle.text = ExhibitChoiceStateHolder.getExhibit()?.name + ""
         binding.fabBack.setOnClickListener {
-            findNavController().navigateUp()
+            if (TopicsChoiceStateHolder.isEmpty()) {
+                findNavController().navigate(R.id.action_DetailExhibitFragment_to_ChoiceTopicFragment)
+            } else findNavController().navigate(R.id.action_DetailExhibitFragment_to_ChoiceExhibitFragment)
         }
         binding.fabNumberinput.setOnClickListener {
             findNavController().navigate(R.id.action_DetailExhibitFragment_to_DirectNumberInputFragment)

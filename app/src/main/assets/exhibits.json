@@ -1,5 +1,6 @@
 [
   {
+    "id": "001",
     "name": "Bronzekanne aus Dambach",
     "topics": [
       {
@@ -14,6 +15,7 @@
     ]
   },
   {
+    "id": "123",
     "name": "Keramikkanne aus Athen",
     "topics": [
       {

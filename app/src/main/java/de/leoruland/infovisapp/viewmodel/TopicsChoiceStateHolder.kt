@@ -21,6 +21,8 @@ object TopicsChoiceStateHolder {
         } else false
     }
 
+    fun isEmpty(): Boolean = topics.isEmpty()
+
     fun clearStore() {
         topics = listOf()
     }

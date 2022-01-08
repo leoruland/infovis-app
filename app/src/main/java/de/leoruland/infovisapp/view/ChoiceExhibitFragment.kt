@@ -34,7 +34,7 @@ class ChoiceExhibitFragment : Fragment() {
         binding.exhibitRecyclerView.adapter = exhibitAdapter
 
         binding.fabBack.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_ChoiceTopicFragment)
         }
         binding.fabNumberinput.setOnClickListener {
             findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_DirectNumberInputFragment)
