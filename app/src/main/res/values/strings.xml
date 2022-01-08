@@ -1,16 +1,9 @@
 <resources>
-    <string name="app_name">Infovis App</string>
+    <string name="app_name">Xhibit Cruiser 2000</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
     <string name="choice_topic_label">Topic Choice Fragment</string>
     <string name="choice_exhibit_label">Exhibit Choice Fragment</string>
     <string name="detail_exhibit_label">Exhibit Detail Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="list_item_topic_text">Hot Topic</string>
-    <string name="list_item_exhibit_text">Exhibition piece</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="tool_text_list_item_topic">Hot Topic</string>
+    <string name="tool_text_list_item_exhibit">Exhibition piece</string>
 </resources>
