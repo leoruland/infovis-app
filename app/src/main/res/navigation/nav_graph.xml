@@ -9,10 +9,12 @@
         android:name="de.leoruland.infovisapp.view.ChoiceTopicFragment"
         android:label="@string/choice_topic_title"
         tools:layout="@layout/fragment_choice_topic">
-
         <action
             android:id="@+id/action_ChoiceTopicFragment_to_ChoiceExhibitFragment"
             app:destination="@id/ChoiceExhibitFragment" />
+        <action
+            android:id="@+id/action_ChoiceTopicFragment_to_DirectNumberInputFragment"
+            app:destination="@id/DirectNumberInputFragment" />
     </fragment>
     <fragment
         android:id="@+id/ChoiceExhibitFragment"
@@ -22,10 +24,26 @@
         <action
             android:id="@+id/action_ChoiceExhibitFragment_to_DetailExhibitFragment"
             app:destination="@id/DetailExhibitFragment" />
+        <action
+            android:id="@+id/action_ChoiceExhibitFragment_to_DirectNumberInputFragment"
+            app:destination="@id/DirectNumberInputFragment" />
     </fragment>
     <fragment
         android:id="@+id/DetailExhibitFragment"
         android:name="de.leoruland.infovisapp.view.DetailExhibitFragment"
         android:label="@string/detail_exhibit_title"
-        tools:layout="@layout/fragment_detail_exhibit" />
+        tools:layout="@layout/fragment_detail_exhibit">
+        <action
+            android:id="@+id/action_DetailExhibitFragment_to_DirectNumberInputFragment"
+            app:destination="@id/DirectNumberInputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DirectNumberInputFragment"
+        android:name="de.leoruland.infovisapp.view.DirectNumberInputFragment"
+        android:label="@string/direct_number_input_title"
+        tools:layout="@layout/fragment_direct_number_input">
+        <action
+            android:id="@+id/action_DirectNumberInputFragment_to_DetailExhibitFragment"
+            app:destination="@id/DetailExhibitFragment" />
+    </fragment>
 </navigation>

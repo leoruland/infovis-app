@@ -4,6 +4,8 @@
     <string name="choice_topic_title">Topic choice</string>
     <string name="choice_exhibit_title">Exhibit choice</string>
     <string name="detail_exhibit_title">Exhibit detail</string>
+    <string name="direct_number_input_title">Enter exhibit number</string>
+    <string name="search_button_text">Search</string>
     <string name="tool_text_list_item_topic">Hot Topic</string>
     <string name="tool_text_list_item_exhibit">Exhibition piece</string>
 </resources>

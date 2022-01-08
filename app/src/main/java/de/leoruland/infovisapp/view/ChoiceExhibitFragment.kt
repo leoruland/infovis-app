@@ -12,17 +12,10 @@ import de.leoruland.infovisapp.databinding.FragmentChoiceExhibitBinding
 import de.leoruland.infovisapp.model.ExhibitsRepository
 import de.leoruland.infovisapp.viewmodel.TopicsChoiceStateHolder
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class ChoiceExhibitFragment : Fragment() {
 
     private var _binding: FragmentChoiceExhibitBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
-
     private val exhibitAdapter =
         ExhibitAdapter(ExhibitsRepository.getExhibits(TopicsChoiceStateHolder.getTopics()))
 
@@ -30,7 +23,6 @@ class ChoiceExhibitFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = FragmentChoiceExhibitBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,6 +35,9 @@ class ChoiceExhibitFragment : Fragment() {
 
         binding.fabBack.setOnClickListener {
             findNavController().navigateUp()
+        }
+        binding.fabNumberinput.setOnClickListener {
+            findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_DirectNumberInputFragment)
         }
     }
 

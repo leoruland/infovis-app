@@ -18,7 +18,6 @@ class DetailExhibitFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         _binding = FragmentDetailExhibitBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -29,6 +28,9 @@ class DetailExhibitFragment : Fragment() {
         binding.exhibitTitle.text = ExhibitChoiceStateHolder.getExhibit()?.name
         binding.fabBack.setOnClickListener {
             findNavController().navigateUp()
+        }
+        binding.fabNumberinput.setOnClickListener {
+            findNavController().navigate(R.id.action_DetailExhibitFragment_to_DirectNumberInputFragment)
         }
     }
 }
