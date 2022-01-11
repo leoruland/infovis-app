@@ -19,6 +19,10 @@ class TopicAdapter(private val topics: List<Topic>) :
         private var isChecked = false
 
         init {
+            val itemTitle: TextView = itemView.findViewById(R.id.topicTitle)
+            val topicCard: CardView = itemView.findViewById(R.id.topic_card)
+            itemTitle.setTextColor(Color.parseColor("#000000"))
+            topicCard.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
             itemView.setOnClickListener(this)
         }
 
@@ -35,7 +39,7 @@ class TopicAdapter(private val topics: List<Topic>) :
             if (isChecked) {
                 TopicsChoiceStateHolder.addTopic(topic)
                 itemTitle.setTextColor(Color.parseColor("#FFFFFF"))
-                topicCard.setCardBackgroundColor(Color.parseColor("#A10040"))
+                topicCard.setCardBackgroundColor(Color.parseColor("#0082D1"))
             } else {
                 TopicsChoiceStateHolder.removeTopic(topic)
                 itemTitle.setTextColor(Color.parseColor("#000000"))

@@ -1,9 +1,11 @@
 package de.leoruland.infovisapp.view
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
@@ -17,6 +19,10 @@ class ExhibitAdapter(private val exhibits: List<Exhibit>) :
         private lateinit var exhibit: Exhibit
 
         init {
+            val itemTitle: TextView = itemView.findViewById(R.id.exhibitTitle)
+            val topicCard: CardView = itemView.findViewById(R.id.exhibit_card)
+            itemTitle.setTextColor(Color.parseColor("#000000"))
+            topicCard.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
             itemView.setOnClickListener(this)
         }
 

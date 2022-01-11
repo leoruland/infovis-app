@@ -22,7 +22,7 @@
         android:id="@+id/error_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/pantone_1665"
+        android:textColor="@color/htw_secondary_orange"
         tools:text="ERROR"
         app:layout_constraintBottom_toTopOf="@+id/number_input"
         app:layout_constraintEnd_toEndOf="parent"
