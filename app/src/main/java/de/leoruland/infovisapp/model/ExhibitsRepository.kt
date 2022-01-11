@@ -64,7 +64,7 @@ object ExhibitsRepository : ExhibitsRepositoryInterface {
 
     override fun getExhibits(topics: List<Topic>?, listInclusive: Boolean): List<Exhibit> {
         return if (topics != null) {
-            var exhibits = mutableListOf<Exhibit>()
+            val exhibits = mutableListOf<Exhibit>()
             this.exhibits.map { exhibit ->
                 if (listInclusive) {
                     exhibit.topics.forEach { topic ->
