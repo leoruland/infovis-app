@@ -2,8 +2,9 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="list_item_exhibit_height">100dp</dimen>
 
-    <dimen name="padding">16dp</dimen>
-    <dimen name="padding_half">8dp</dimen>
+    <dimen name="base_padding">8dp</dimen>
+    <dimen name="padding_x2">16dp</dimen>
+    <dimen name="padding_x4">32dp</dimen>
 
     <dimen name="caption_text_size">30sp</dimen>
     <dimen name="standard_text_size">20sp</dimen>
