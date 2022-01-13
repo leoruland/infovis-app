@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentDirectNumberInputBinding
-import de.leoruland.infovisapp.model.ExhibitsRepository
+import de.leoruland.infovisapp.model.MockExhibitsRepository
 import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStateHolder
 
 class DirectNumberInputFragment : Fragment() {
@@ -33,7 +33,7 @@ class DirectNumberInputFragment : Fragment() {
         }
         binding.searchButton.setOnClickListener {
             val exhibitId = binding.numberInput.text.toString()
-            val exhibit = ExhibitsRepository.getExhibit(exhibitId)
+            val exhibit = MockExhibitsRepository.getExhibit(exhibitId)
             when {
                 exhibit != null -> {
                     ExhibitChoiceStateHolder.setExhibit(exhibit)

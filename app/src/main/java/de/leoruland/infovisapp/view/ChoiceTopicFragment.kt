@@ -9,14 +9,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentChoiceTopicBinding
-import de.leoruland.infovisapp.model.ExhibitsRepository
+import de.leoruland.infovisapp.model.MockExhibitsRepository
 import de.leoruland.infovisapp.viewmodel.TopicsChoiceStateHolder
 
 class ChoiceTopicFragment : Fragment() {
 
     private var _binding: FragmentChoiceTopicBinding? = null
     private val binding get() = _binding!!
-    private val topicAdapter = TopicAdapter(ExhibitsRepository.getTopics())
+    private val topicAdapter = TopicAdapter(MockExhibitsRepository.getTopics())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
