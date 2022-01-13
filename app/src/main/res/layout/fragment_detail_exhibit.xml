@@ -10,11 +10,43 @@
         android:id="@+id/exhibit_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/base_padding"
         android:textSize="@dimen/caption_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/detail_exhibit_title" />
+
+    <org.osmdroid.views.MapView
+        android:id="@+id/map"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="@dimen/padding_x4"
+        android:layout_marginTop="@dimen/padding_x2"
+        android:layout_marginEnd="@dimen/padding_x4"
+        android:layout_marginBottom="@dimen/padding_x2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exhibit_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/topicBubblesRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/padding_x2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map" />
+
+    <TextView
+        android:id="@+id/exhibit_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_x2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topicBubblesRecyclerView"
+        tools:text="Description od the object. It is a long description and very descriptive." />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_back"

@@ -2,6 +2,11 @@
   {
     "id": "001",
     "name": "Bronzekanne aus Dambach",
+    "location": {
+      "mLongitude": 10.578597,
+      "mLatitude": 49.102694
+    },
+    "description": "Diese Kanne wurde gefunden im vicus der sich angrenzend an das römische Kastell von Dambach befindet. Sie hat eine besondere Form und Herstellungsweise, die auf eine sehr spezielle Verwendung und Funktionalität der Kanne hinweist. Vermutlich waren es Messbecher.",
     "topics": [
       {
         "name": "Dambach"
@@ -17,6 +22,11 @@
   {
     "id": "123",
     "name": "Keramikkanne aus Athen",
+    "location": {
+      "mLongitude": 23.727778,
+      "mLatitude": 37.977778
+    },
+    "description": "Dies ist eine Kanne aus Athen, sie besteht aus Keramik und ist bemalt mit Schlick der beim Brennen schwarz wird. Die Formen wurden rausgekrazt so dass die Formen des Bildes aus einem Negativ aus dem roten Tongrund bestehen. Dies ist die bekannte Technik der rotfigurigen Keramikmalerei.",
     "topics": [
       {
         "name": "Athen"
@@ -26,6 +36,15 @@
       },
       {
         "name": "Keramik"
+      },
+      {
+        "name": "OLOLOLOLOLOLO"
+      },
+      {
+        "name": "wololo"
+      },
+      {
+        "name": "Dings"
       }
     ]
   }
