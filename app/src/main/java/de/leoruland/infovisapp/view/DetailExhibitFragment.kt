@@ -9,7 +9,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentDetailExhibitBinding
 import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStateHolder
@@ -56,7 +55,7 @@ class DetailExhibitFragment : Fragment() {
         binding.topicBubblesRecyclerView.adapter = topicBubblesAdapter
 
         exhibit?.let {
-            binding.exhibitTitle.text = it.name
+            binding.exhibitTitle.text = String.format(getString(R.string.detail_exhibit_item_title), it.id, it.name)
             binding.exhibitDescription.text = it.description
         }
         binding.fabBack.setOnClickListener {

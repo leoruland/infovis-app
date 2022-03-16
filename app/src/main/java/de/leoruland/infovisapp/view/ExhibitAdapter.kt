@@ -29,7 +29,8 @@ class ExhibitAdapter(private val exhibits: List<Exhibit>) :
         fun bind(exhibit: Exhibit) {
             this.exhibit = exhibit
             val itemTitle: TextView = itemView.findViewById(R.id.exhibitTitle)
-            itemTitle.text = exhibit.name
+            itemTitle.text = String.format("%s %s", exhibit.id, exhibit.name)
+//                exhibit.name
         }
 
         override fun onClick(view: View?) {
