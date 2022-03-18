@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.view
+package de.leoruland.infovisapp.controller
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentDirectNumberInputBinding
 import de.leoruland.infovisapp.model.MockExhibitsRepository
-import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStateHolder
+import de.leoruland.infovisapp.states.ExhibitChoiceStateHolder
 
 class DirectNumberInputFragment : Fragment() {
     private var _binding: FragmentDirectNumberInputBinding? = null

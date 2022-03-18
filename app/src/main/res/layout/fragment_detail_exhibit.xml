@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.DetailExhibitFragment">
+    tools:context=".controller.DetailExhibitFragment">
 
     <TextView
         android:id="@+id/exhibit_title"
@@ -17,6 +17,18 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="@string/detail_exhibit_title" />
 
+    <ImageView
+        android:id="@+id/exhibit_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_x4"
+        android:layout_marginTop="@dimen/padding_x2"
+        android:layout_marginEnd="@dimen/padding_x4"
+        android:layout_marginBottom="@dimen/padding_x2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exhibit_title" />
+
     <org.osmdroid.views.MapView
         android:id="@+id/map"
         android:layout_width="0dp"
@@ -27,7 +39,7 @@
         android:layout_marginBottom="@dimen/padding_x2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/exhibit_title" />
+        app:layout_constraintTop_toBottomOf="@id/exhibit_image" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/topicBubblesRecyclerView"

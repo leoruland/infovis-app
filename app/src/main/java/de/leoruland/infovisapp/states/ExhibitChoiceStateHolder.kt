@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.viewmodel
+package de.leoruland.infovisapp.states
 
 import de.leoruland.infovisapp.model.Exhibit
 

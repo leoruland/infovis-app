@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.view
+package de.leoruland.infovisapp.controller
 
 import android.view.LayoutInflater
 import android.view.View

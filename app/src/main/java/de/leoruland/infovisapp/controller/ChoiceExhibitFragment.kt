@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.view
+package de.leoruland.infovisapp.controller
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentChoiceExhibitBinding
 import de.leoruland.infovisapp.model.MockExhibitsRepository
-import de.leoruland.infovisapp.viewmodel.TopicsChoiceStateHolder
+import de.leoruland.infovisapp.states.TopicsChoiceStateHolder
 
 class ChoiceExhibitFragment : Fragment() {
 

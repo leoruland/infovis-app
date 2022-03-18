@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.view
+package de.leoruland.infovisapp.controller
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.model.Exhibit
-import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStateHolder
+import de.leoruland.infovisapp.states.ExhibitChoiceStateHolder
 
 class ExhibitAdapter(private val exhibits: List<Exhibit>) :
     RecyclerView.Adapter<ExhibitAdapter.ViewHolder>() {
@@ -29,7 +29,7 @@ class ExhibitAdapter(private val exhibits: List<Exhibit>) :
         fun bind(exhibit: Exhibit) {
             this.exhibit = exhibit
             val itemTitle: TextView = itemView.findViewById(R.id.exhibitTitle)
-            itemTitle.text = String.format("%s %s", exhibit.id, exhibit.name)
+            itemTitle.text = String.format("%s %s", exhibit.number, exhibit.name)
 //                exhibit.name
         }
 

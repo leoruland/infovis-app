@@ -1,9 +1,14 @@
-package de.leoruland.infovisapp.view
+package de.leoruland.infovisapp.controller
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.annotation.RequiresPermission
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -11,8 +16,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentDetailExhibitBinding
-import de.leoruland.infovisapp.viewmodel.ExhibitChoiceStateHolder
-import de.leoruland.infovisapp.viewmodel.TopicsChoiceStateHolder
+import de.leoruland.infovisapp.states.ExhibitChoiceStateHolder
+import de.leoruland.infovisapp.states.TopicsChoiceStateHolder
 import org.osmdroid.config.Configuration
 import org.osmdroid.library.BuildConfig
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
@@ -20,11 +25,12 @@ import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
 import org.osmdroid.views.overlay.MinimapOverlay
+import java.util.concurrent.Executors
 
 class DetailExhibitFragment : Fragment() {
     private var _binding: FragmentDetailExhibitBinding? = null
     private val binding get() = _binding!!
-    private val topicBubblesAdapter: TopicBubblesAdapter //= TopicBubblesAdapter(exhibit.topics)
+    private val topicBubblesAdapter: TopicBubblesAdapter
 
     private lateinit var map: MapView
     private val exhibit = ExhibitChoiceStateHolder.getExhibit()
@@ -45,17 +51,18 @@ class DetailExhibitFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.topicBubblesRecyclerView.layoutManager = //LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.topicBubblesRecyclerView.layoutManager =
             GridLayoutManager(
-            requireContext(),
-            4,
-            GridLayoutManager.VERTICAL,
-            false
-        ) //LinearLayoutManager(activity)
+                requireContext(),
+                4,
+                GridLayoutManager.VERTICAL,
+                false
+            )
         binding.topicBubblesRecyclerView.adapter = topicBubblesAdapter
 
         exhibit?.let {
-            binding.exhibitTitle.text = String.format(getString(R.string.detail_exhibit_item_title), it.id, it.name)
+            binding.exhibitTitle.text =
+                String.format(getString(R.string.detail_exhibit_item_title), it.number, it.name)
             binding.exhibitDescription.text = it.description
         }
         binding.fabBack.setOnClickListener {
@@ -67,6 +74,7 @@ class DetailExhibitFragment : Fragment() {
             findNavController().navigate(R.id.action_DetailExhibitFragment_to_DirectNumberInputFragment)
         }
 
+        setupImage()
         setupMap()
     }
 
@@ -78,6 +86,30 @@ class DetailExhibitFragment : Fragment() {
     override fun onPause() {
         super.onPause()
         map.onPause()
+    }
+
+    /**
+     * Code von GeeksforGeeks: "How to Load Any Image From URL Without Using Any Dependency in Android?"
+     * https://www.geeksforgeeks.org/how-to-load-any-image-from-url-without-using-any-dependency-in-android/
+     * am 18.03.2022
+     */
+    private fun setupImage(url: String = "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png") {
+        val imageView = binding.exhibitImage
+        val executor = Executors.newSingleThreadExecutor()
+        val handler = Handler(Looper.getMainLooper())
+        var image: Bitmap?
+        executor.execute {
+            try {
+                val `in` = java.net.URL(url).openStream()
+                image = BitmapFactory.decodeStream(`in`)
+                handler.post {
+                    imageView.setImageBitmap(image)
+                }
+            }
+            catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
     }
 
     private fun setupMap() {
