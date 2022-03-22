@@ -40,7 +40,9 @@ object MockExhibitsRepository : ExhibitsRepository {
     }
 
     /**
-     * Von Raywenderlich.com
+     * Code von
+     * https://stackoverflow.com/questions/56962608/how-to-read-json-file-from-assests-in-android-using-kotlin
+     * am 10.01.2022
      */
     private fun loadJSONFromAsset(filename: String, context: Context): String? {
         var json: String? = null
@@ -58,7 +60,6 @@ object MockExhibitsRepository : ExhibitsRepository {
     }
 
     override fun getTopics(): List<Topic> {
-//        loadTopics() // TODO insert context
         return topics
     }
 
@@ -78,8 +79,8 @@ object MockExhibitsRepository : ExhibitsRepository {
         } else exhibits
     }
 
-    override fun getExhibit(id: String): Exhibit? {
-        exhibits.forEach { if (it.id == id) return it }
+    override fun getExhibit(number: String): Exhibit? {
+        exhibits.forEach { if (it.number == number) return it }
         return null
     }
 }

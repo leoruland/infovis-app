@@ -2,15 +2,17 @@ package de.leoruland.infovisapp.controller
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.annotation.RequiresPermission
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -74,7 +76,7 @@ class DetailExhibitFragment : Fragment() {
             findNavController().navigate(R.id.action_DetailExhibitFragment_to_DirectNumberInputFragment)
         }
 
-        setupImage()
+        setupImageFromURL(exhibit?.imageLink)
         setupMap()
     }
 
@@ -93,8 +95,9 @@ class DetailExhibitFragment : Fragment() {
      * https://www.geeksforgeeks.org/how-to-load-any-image-from-url-without-using-any-dependency-in-android/
      * am 18.03.2022
      */
-    private fun setupImage(url: String = "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png") {
+    private fun setupImageFromURL(url: String?) {
         val imageView = binding.exhibitImage
+        imageView.setImageResource(R.drawable.ic_missing)
         val executor = Executors.newSingleThreadExecutor()
         val handler = Handler(Looper.getMainLooper())
         var image: Bitmap?
@@ -107,7 +110,7 @@ class DetailExhibitFragment : Fragment() {
                 }
             }
             catch (e: Exception) {
-                e.printStackTrace()
+                Log.d("DEBUG","No image acquired")
             }
         }
     }
