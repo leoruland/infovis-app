@@ -1,65 +1,76 @@
 [
   {
-    "id": "https://arachne.dainst.org/entity/1081008",
-    "number": "001",
-    "name": "Statuette eines Cautes. Museo Gregoriano Profano ex Lateranense, Vatikanische Museen",
-    "image_link": "blob:https://arachne.dainst.org/9e61edbc-441c-4724-991f-13631fc5c267",
+    "id": "https://arachne.dainst.org/entity/1081758",
+    "number": "1",
+    "name": "Statue des Mithras einer Mithras-Gruppe",
+    "repository": "Venedig, Museo Archeologico Nazionale di Venezia",
     "location": {
-      "mLongitude": 10.578597,
-      "mLatitude": 49.102694
+      "mLongitude": 12.4839,
+      "mLatitude": 41.89474
     },
-    "description": "Diese Kanne wurde gefunden im vicus der sich angrenzend an das römische Kastell von Dambach befindet. Sie hat eine besondere Form und Herstellungsweise, die auf eine sehr spezielle Verwendung und Funktionalität der Kanne hinweist. Vermutlich waren es Messbecher.",
+    "description": "Rundplastik von 110cm Höhe. Abgebildet ist die Szene eine einer Tauroctonie, bei welcher ein Stier von Mithras mit der linken Hand bei den Nüstern gehalten und der Rechten erdolcht wird.",
     "topics": [
       {
-        "name": "Mithraskult"
+        "name": "Mithras"
       },
       {
-        "name": "Statuette"
+        "name": "Tauroctonie"
       },
       {
-        "name": "Bronze"
+        "name": "Statue"
+      },
+      {
+        "name": "unterlebensgroß"
       }
     ]
   },
   {
-    "id": "URL",
-    "number": "002",
-    "name": "Bronzekanne aus Dambach",
-    "image_link": "URL",
+    "id": "https://arachne.dainst.org/entity/1107161",
+    "number": "2",
+    "name": "Mithras-Relief",
+    "repository": "Verona, Museo Maffeiano",
     "location": {
-      "mLongitude": 10.578597,
-      "mLatitude": 49.102694
+      "mLongitude": 12.4839,
+      "mLatitude": 41.89474
     },
-    "description": "Diese Kanne wurde gefunden im vicus der sich angrenzend an das römische Kastell von Dambach befindet. Sie hat eine besondere Form und Herstellungsweise, die auf eine sehr spezielle Verwendung und Funktionalität der Kanne hinweist. Vermutlich waren es Messbecher.",
+    "description": "Dem Mithras geweihter Altar von 55,5cm Höhe aus dem 2.-3. Jh. n. Chr.\n\nDer Altar trägt die Inschrift\n\nDeo / Invicto / Mithrae / C(aius) Lucretius Mnester / M(arcus) Aemilius Philetus / sub mag(isterio) anni primi / Marci Aemili Chrysanti / d(e) s(uis) d(onum) d(ederunt)",
     "topics": [
       {
-        "name": "Dambach"
+        "name": "Mithras"
       },
       {
-        "name": "Kanne"
+        "name": "Altar"
       },
       {
-        "name": "Bronze"
+        "name": "Relief"
+      },
+      {
+        "name": "Marmor"
       }
     ]
   },
   {
-    "id": "123",
-    "name": "Keramikkanne aus Athen",
+    "id": "https://arachne.dainst.org/entity/1198892",
+    "number": "3",
+    "name": "Mithras-Relief",
+    "repository": "Kairo, Ägyptisches Museum Kairo",
     "location": {
-      "mLongitude": 23.727778,
-      "mLatitude": 37.977778
+      "mLongitude": 31.233611,
+      "mLatitude": 30.047222
     },
-    "description": "Dies ist eine Kanne aus Athen, sie besteht aus Keramik und ist bemalt mit Schlick der beim Brennen schwarz wird. Die Formen wurden rausgekrazt so dass die Formen des Bildes aus einem Negativ aus dem roten Tongrund bestehen. Dies ist die bekannte Technik der rotfigurigen Keramikmalerei.",
+    "description": "Kultisches Mithras-Relief von 91cm Höhe aus dem 2.-3. Jh. n. Chr. Es zeigt die typische Haltung der Tauroctonie, bei der ein Stier von Mithras mit der linken Hand bei den Nüstern gehalten und der Rechten erdolcht wird. Auf die Szene blickt eine teilweise erhaltene Figur herab, sie ist gerahmt von einer Aedicula mit korinthischen Kapitellen. Vor den dargestellten Säulen sind zwei Figuren dargestellt, Cautes und Cautopates, von denen eine nur noch in abgeschlagenem Erhaltungszustand  vorhanden sind. In den oberen Ecken des Reliefs befinden sich über der Aedicula zwei Büsten von Sol Invictus, bzw. Luna.",
     "topics": [
       {
-        "name": "Athen"
+        "name": "Mithras"
       },
       {
-        "name": "Kanne"
+        "name": "Tauroctonie"
       },
       {
-        "name": "Keramik"
+        "name": "Relief"
+      },
+      {
+        "name": "Marmor"
       }
     ]
   }

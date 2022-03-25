@@ -4,6 +4,7 @@
     <string name="choice_exhibit_title">Exhibit choice</string>
     <string name="choice_exhibit_item_title" translatable="false">%s %s</string>
     <string name="detail_exhibit_title">Exhibit detail</string>
+    <string name="detail_exhibit_repository">Exhibit repository</string>
     <string name="detail_exhibit_item_title">Exhibit No. %s\n%s</string>
     <string name="direct_number_input_title">Enter exhibit Id</string>
     <string name="enter_button_text">Enter</string>

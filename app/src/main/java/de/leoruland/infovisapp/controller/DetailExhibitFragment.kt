@@ -1,18 +1,13 @@
 package de.leoruland.infovisapp.controller
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresPermission
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -27,7 +22,7 @@ import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
 import org.osmdroid.views.overlay.MinimapOverlay
-import java.util.concurrent.Executors
+
 
 class DetailExhibitFragment : Fragment() {
     private var _binding: FragmentDetailExhibitBinding? = null
@@ -65,7 +60,9 @@ class DetailExhibitFragment : Fragment() {
         exhibit?.let {
             binding.exhibitTitle.text =
                 String.format(getString(R.string.detail_exhibit_item_title), it.number, it.name)
+            binding.exhibitRepository.text = it.repository
             binding.exhibitDescription.text = it.description
+            binding.fabOpen.setOnClickListener { openLink(exhibit.id) }
         }
         binding.fabBack.setOnClickListener {
             if (TopicsChoiceStateHolder.isEmpty()) {
@@ -76,7 +73,6 @@ class DetailExhibitFragment : Fragment() {
             findNavController().navigate(R.id.action_DetailExhibitFragment_to_DirectNumberInputFragment)
         }
 
-        setupImageFromURL(exhibit?.imageLink)
         setupMap()
     }
 
@@ -88,31 +84,6 @@ class DetailExhibitFragment : Fragment() {
     override fun onPause() {
         super.onPause()
         map.onPause()
-    }
-
-    /**
-     * Code von GeeksforGeeks: "How to Load Any Image From URL Without Using Any Dependency in Android?"
-     * https://www.geeksforgeeks.org/how-to-load-any-image-from-url-without-using-any-dependency-in-android/
-     * am 18.03.2022
-     */
-    private fun setupImageFromURL(url: String?) {
-        val imageView = binding.exhibitImage
-        imageView.setImageResource(R.drawable.ic_missing)
-        val executor = Executors.newSingleThreadExecutor()
-        val handler = Handler(Looper.getMainLooper())
-        var image: Bitmap?
-        executor.execute {
-            try {
-                val `in` = java.net.URL(url).openStream()
-                image = BitmapFactory.decodeStream(`in`)
-                handler.post {
-                    imageView.setImageBitmap(image)
-                }
-            }
-            catch (e: Exception) {
-                Log.d("DEBUG","No image acquired")
-            }
-        }
     }
 
     private fun setupMap() {
@@ -146,5 +117,12 @@ class DetailExhibitFragment : Fragment() {
         marker.icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_flag_location)
         map.overlays.add(marker)
         map.invalidate()
+    }
+
+    private fun openLink(url: String) {
+        if (url.isNotBlank()) {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(browserIntent)
+        }
     }
 }

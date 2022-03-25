@@ -29,13 +29,14 @@ class ExhibitAdapter(private val exhibits: List<Exhibit>) :
         fun bind(exhibit: Exhibit) {
             this.exhibit = exhibit
             val itemTitle: TextView = itemView.findViewById(R.id.exhibitTitle)
-            itemTitle.text = String.format("%s %s", exhibit.number, exhibit.name)
-//                exhibit.name
+            itemTitle.text =
+                String.format("#%s %s aus %s", exhibit.number, exhibit.name, exhibit.repository)
         }
 
         override fun onClick(view: View?) {
             ExhibitChoiceStateHolder.setExhibit(exhibit)
-            itemView.findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_DetailExhibitFragment)
+            itemView.findNavController()
+                .navigate(R.id.action_ChoiceExhibitFragment_to_DetailExhibitFragment)
         }
     }
 
