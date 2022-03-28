@@ -3,8 +3,8 @@ package de.leoruland.infovisapp.controller
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import de.leoruland.infovisapp.DirectNumberInputScreen
 import de.leoruland.infovisapp.R
-import de.leoruland.infovisapp.states.TopicsChoiceStateHolder
 import org.junit.After
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -20,11 +20,24 @@ class DirectNumberInputFragmentTest {
     @After
     fun teardown() {
         scenario.close()
-        TopicsChoiceStateHolder.clearStore()
     }
 
     @Test
     fun layout_shows_completely() {
         showFragment()
+
+        DirectNumberInputScreen {
+            title.isVisible()
+            errorText.isInvisible()
+            inputField.isVisible()
+            searchButton {
+                isVisible()
+                isClickable()
+            }
+            closeButton {
+                isVisible()
+                isClickable()
+            }
+        }
     }
 }
