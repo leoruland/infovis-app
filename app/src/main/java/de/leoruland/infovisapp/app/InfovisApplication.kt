@@ -8,7 +8,7 @@ class InfovisApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        MockExhibitsRepository.loadExhibits(this)
-        MockExhibitsRepository.loadTopics(this)
+        MockExhibitsRepository.loadExhibits(this, "exhibits.json")
+        MockExhibitsRepository.loadTopics(this, "exhibits.json")
     }
 }

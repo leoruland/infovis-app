@@ -8,7 +8,7 @@ import org.osmdroid.util.GeoPoint
 
 class ExhibitChoiceStateHolderTest {
 
-    val firstExhibit = Exhibit(
+    private val firstExhibit = Exhibit(
         "URL_ID",
         "1",
         "erstes",
@@ -18,7 +18,7 @@ class ExhibitChoiceStateHolderTest {
         listOf(Topic("Test"), Topic("Fall"), Topic("Eins")),
     )
 
-    val secondExhibit = Exhibit(
+    private val secondExhibit = Exhibit(
         "URL_ID",
         "2",
         "zweites",

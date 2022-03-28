@@ -12,16 +12,16 @@ object MockExhibitsRepository : ExhibitsRepository {
     private lateinit var exhibits: List<Exhibit>
     private lateinit var topics: List<Topic>
 
-    override fun loadExhibits(context: Context) {
+    override fun loadExhibits(context: Context, filename: String) {
         val gson = Gson()
-        val json = loadJSONFromAsset("exhibits.json", context)
+        val json = loadJSONFromAsset(filename, context)
         val listType = object : TypeToken<List<Exhibit>>() {}.type
         exhibits = gson.fromJson(json, listType)
     }
 
-    override fun loadTopics(context: Context) {
+    override fun loadTopics(context: Context, filename: String) {
         val gson = Gson()
-        val json = loadJSONFromAsset("exhibits.json", context)
+        val json = loadJSONFromAsset(filename, context)
         val listType = object : TypeToken<List<Exhibit>>() {}.type
         val exhibits: List<Exhibit> = gson.fromJson(
             json,
@@ -76,7 +76,7 @@ object MockExhibitsRepository : ExhibitsRepository {
                     exhibits.add(exhibit)
             }
             exhibits
-        } else exhibits
+        } else emptyList()
     }
 
     override fun getExhibit(number: String): Exhibit? {
