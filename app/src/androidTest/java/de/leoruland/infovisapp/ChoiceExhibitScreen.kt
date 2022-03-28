@@ -18,6 +18,6 @@ object ChoiceExhibitScreen : Screen<ChoiceExhibitScreen>() {
     )
 
     class ExhibitItem(parent: Matcher<View>) : KRecyclerItem<ExhibitItem>(parent) {
-        val title = KTextView(parent) { withId(R.id.exhibitTitle) }
+        val title = KTextView(parent) { withId(R.id.exhibit_item_title) }
     }
 }

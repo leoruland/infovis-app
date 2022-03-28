@@ -19,7 +19,7 @@ class TopicAdapter(private val topics: List<Topic>) :
         private var isChecked = false
 
         init {
-            val itemTitle: TextView = itemView.findViewById(R.id.topicTitle)
+            val itemTitle: TextView = itemView.findViewById(R.id.topic_item_title)
             val topicCard: CardView = itemView.findViewById(R.id.topic_card)
             itemTitle.setTextColor(Color.parseColor("#000000"))
             topicCard.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
@@ -28,12 +28,12 @@ class TopicAdapter(private val topics: List<Topic>) :
 
         fun bind(topic: Topic) {
             this.topic = topic
-            val itemTitle: TextView = itemView.findViewById(R.id.topicTitle)
+            val itemTitle: TextView = itemView.findViewById(R.id.topic_item_title)
             itemTitle.text = topic.name
         }
 
         override fun onClick(view: View?) {
-            val itemTitle: TextView = itemView.findViewById(R.id.topicTitle)
+            val itemTitle: TextView = itemView.findViewById(R.id.topic_item_title)
             val topicCard: CardView = itemView.findViewById(R.id.topic_card)
             isChecked = !isChecked
             if (isChecked) {

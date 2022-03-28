@@ -37,7 +37,7 @@ class ChoiceTopicFragment : Fragment() {
         binding.topicRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding.topicRecyclerView.adapter = topicAdapter
 
-        binding.fabCheck.setOnClickListener {
+        binding.fabNext.setOnClickListener {
             if (!TopicsChoiceStateHolder.isEmpty()) {
                 findNavController().navigate(R.id.action_ChoiceTopicFragment_to_ChoiceExhibitFragment)
             }

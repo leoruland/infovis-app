@@ -1,28 +1,21 @@
-package de.leoruland.infovisapp
+package de.leoruland.infovisapp.controller
 
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import de.leoruland.infovisapp.controller.ChoiceExhibitFragment
-import de.leoruland.infovisapp.model.Topic
+import de.leoruland.infovisapp.ChoiceTopicScreen
+import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.states.TopicsChoiceStateHolder
 import org.junit.After
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class ChoiceExhibitFragmentTest {
+class ChoiceTopicFragmentTest {
 
-    private lateinit var scenario: FragmentScenario<ChoiceExhibitFragment>
+    private lateinit var scenario: FragmentScenario<ChoiceTopicFragment>
     private fun showFragment() {
         scenario = launchFragmentInContainer(null, R.style.Theme_Infovisapp_NoActionBar)
-    }
-
-    @Before
-    fun setup() {
-        showFragment()
-        TopicsChoiceStateHolder.addTopic(Topic("Mithras"))
     }
 
     @After
@@ -32,17 +25,27 @@ class ChoiceExhibitFragmentTest {
     }
 
     @Test
-    fun base_layout_shows() {
+    fun layout_shows_completely() {
+        val firstTopicTitle = "Mithras"
+        val topicsTotal = 6
+
         showFragment()
 
-        ChoiceExhibitScreen.apply {
+        ChoiceTopicScreen {
             title.isVisible()
-            backButton.isVisible()
-            backButton.isClickable()
+            nextButton {
+                isVisible()
+                isClickable()
+            }
             numberInputButton.isVisible()
             numberInputButton.isClickable()
-            exhibitItems.isVisible()
+            topicItems {
+                isVisible()
+                hasSize(topicsTotal)
+                firstChild<ChoiceTopicScreen.TopicItem> {
+                    title.hasText(firstTopicTitle)
+                }
+            }
         }
     }
-
 }

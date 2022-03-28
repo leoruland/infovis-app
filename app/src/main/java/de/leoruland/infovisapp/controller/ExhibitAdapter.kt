@@ -19,7 +19,7 @@ class ExhibitAdapter(private val exhibits: List<Exhibit>) :
         private lateinit var exhibit: Exhibit
 
         init {
-            val itemTitle: TextView = itemView.findViewById(R.id.exhibitTitle)
+            val itemTitle: TextView = itemView.findViewById(R.id.exhibit_item_title)
             val topicCard: CardView = itemView.findViewById(R.id.exhibit_card)
             itemTitle.setTextColor(Color.parseColor("#000000"))
             topicCard.setCardBackgroundColor(Color.parseColor("#FFFFFF"))
@@ -28,7 +28,7 @@ class ExhibitAdapter(private val exhibits: List<Exhibit>) :
 
         fun bind(exhibit: Exhibit) {
             this.exhibit = exhibit
-            val itemTitle: TextView = itemView.findViewById(R.id.exhibitTitle)
+            val itemTitle: TextView = itemView.findViewById(R.id.exhibit_item_title)
             itemTitle.text =
                 String.format("#%s %s aus %s", exhibit.number, exhibit.name, exhibit.repository)
         }

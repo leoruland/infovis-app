@@ -17,7 +17,7 @@ class TopicBubblesAdapter(private val topics: List<Topic>) :
 
         fun bind(topic: Topic) {
             this.topic = topic
-            itemTitle = itemView.findViewById(R.id.topicTitle)
+            itemTitle = itemView.findViewById(R.id.topic_item_title)
             itemTitle.text = topic.name
         }
 
