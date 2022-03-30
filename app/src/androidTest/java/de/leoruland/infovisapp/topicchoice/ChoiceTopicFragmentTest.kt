@@ -65,7 +65,7 @@ class ChoiceTopicFragmentTest {
         val topicsTotal = 6
 
         showFragment()
-
+        // Kakao Tests
         ChoiceTopicScreen {
             title.isVisible()
             nextButton {
@@ -84,7 +84,7 @@ class ChoiceTopicFragmentTest {
                 }
             }
         }
-
+        // Espresso Tests
         onView(withId(R.id.header)).check(matches(isDisplayed()))
         onView(withId(R.id.fab_next)).check(matches(isDisplayed()))
         onView(withId(R.id.fab_next)).check(matches(isClickable()))
@@ -96,7 +96,6 @@ class ChoiceTopicFragmentTest {
             topicsTotal
         )
         onView(withId(R.id.topicRecyclerView)).check(matches(hasDescendant(withText(firstTopicTitle))))
-
     }
 
     /**

@@ -102,19 +102,19 @@ class ChoiceExhibitFragmentTest {
             R.id.DetailExhibitFragment,
             navController.currentDestination?.id
         )
-        }
+    }
 
-        @Test
-        fun back_button_navigates_to_topics_choice() {
-            showFragment()
+    @Test
+    fun back_button_navigates_to_topics_choice() {
+        showFragment()
 
-            ChoiceExhibitScreen.backButton.click()
+        ChoiceExhibitScreen.backButton.click()
 
-            assertEquals(
-                R.id.ChoiceTopicFragment,
-                navController.currentDestination?.id
-            )
-        }
+        assertEquals(
+            R.id.ChoiceTopicFragment,
+            navController.currentDestination?.id
+        )
+    }
 
     @Test
     fun number_input_button_navigates_to_number_input_screen() {
