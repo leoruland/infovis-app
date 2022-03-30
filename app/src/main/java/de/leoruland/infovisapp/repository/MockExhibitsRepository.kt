@@ -4,6 +4,8 @@ import android.content.Context
 import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import de.leoruland.infovisapp.data.Exhibit
+import de.leoruland.infovisapp.data.Topic
 import java.io.IOException
 
 object MockExhibitsRepository : ExhibitsRepository {

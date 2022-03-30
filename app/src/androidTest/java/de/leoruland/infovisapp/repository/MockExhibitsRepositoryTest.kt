@@ -2,6 +2,8 @@ package de.leoruland.infovisapp.repository
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
+import de.leoruland.infovisapp.data.Exhibit
+import de.leoruland.infovisapp.data.Topic
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -70,7 +72,10 @@ class MockExhibitsRepositoryTest {
     @Test
     fun getExhibits_list_not_inclusive() {
         MockExhibitsRepository.loadExhibits(testContext, "testExhibits.json")
-        val allExhibits = MockExhibitsRepository.getExhibits(listOf(Topic("Mithras"),Topic("Statue")), false)
+        val allExhibits = MockExhibitsRepository.getExhibits(listOf(
+            Topic("Mithras"),
+            Topic("Statue")
+        ), false)
         assertEquals(1,allExhibits.size)
 
         val firstExhibit = allExhibits.first()

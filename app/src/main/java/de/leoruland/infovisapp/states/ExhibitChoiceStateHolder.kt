@@ -1,6 +1,6 @@
 package de.leoruland.infovisapp.states
 
-import de.leoruland.infovisapp.repository.Exhibit
+import de.leoruland.infovisapp.data.Exhibit
 
 object ExhibitChoiceStateHolder {
     private var exhibit: Exhibit? = null

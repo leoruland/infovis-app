@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
-import de.leoruland.infovisapp.repository.Topic
+import de.leoruland.infovisapp.data.Topic
 
 class TopicBubblesAdapter(private val topics: List<Topic>) :
     RecyclerView.Adapter<TopicBubblesAdapter.ViewHolder>() {

@@ -14,8 +14,8 @@ import androidx.test.espresso.intent.matcher.IntentMatchers.hasAction
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import de.leoruland.infovisapp.DetailExhibitScreen
 import de.leoruland.infovisapp.R
-import de.leoruland.infovisapp.repository.Exhibit
-import de.leoruland.infovisapp.repository.Topic
+import de.leoruland.infovisapp.data.Exhibit
+import de.leoruland.infovisapp.data.Topic
 import de.leoruland.infovisapp.states.ExhibitChoiceStateHolder
 import org.junit.After
 import org.junit.Assert

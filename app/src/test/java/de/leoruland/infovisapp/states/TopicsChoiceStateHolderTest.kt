@@ -1,6 +1,6 @@
 package de.leoruland.infovisapp.states
 
-import de.leoruland.infovisapp.repository.Topic
+import de.leoruland.infovisapp.data.Topic
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

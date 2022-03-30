@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.repository
+package de.leoruland.infovisapp.data
 
 import org.osmdroid.util.GeoPoint
 
