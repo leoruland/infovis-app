@@ -18,14 +18,16 @@ import org.junit.runner.RunWith
 class DirectNumberInputFragmentTest {
 
     private lateinit var scenario: FragmentScenario<DirectNumberInputFragment>
+    private lateinit var navController: TestNavHostController
 
-    //    private lateinit var navController: TestNavHostController
     private fun showFragment() {
-        val navController = TestNavHostController(
+        navController = TestNavHostController(
             ApplicationProvider.getApplicationContext()
         )
-        navController.setGraph(R.navigation.nav_graph)
         scenario = launchFragmentInContainer(null, R.style.Theme_Infovisapp_NoActionBar) {
+            navController.setGraph(R.navigation.nav_graph)
+            navController.setCurrentDestination(R.id.DirectNumberInputFragment)
+
             DirectNumberInputFragment().also { fragment ->
                 fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {
@@ -38,7 +40,7 @@ class DirectNumberInputFragmentTest {
 
     @After
     fun teardown() {
-//        scenario.close()
+        scenario.close()
     }
 
     @Test
@@ -61,47 +63,27 @@ class DirectNumberInputFragmentTest {
     }
 
     @Test
-    fun existing_number_shows_exhibit() { // TODO fix nav controller
-        val navController = TestNavHostController(
-            ApplicationProvider.getApplicationContext()
-        )
-//        navController.setGraph(R.navigation.nav_graph)
-        scenario = launchFragmentInContainer(null, R.style.Theme_Infovisapp_NoActionBar) {
-            DirectNumberInputFragment().also { fragment ->
-                fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
-                    if (viewLifecycleOwner != null) {
-                        Navigation.setViewNavController(fragment.requireView(), navController)
-                    }
-                }
-            }
-        }
+    fun existing_number_navigates_to_exhibit_detail() {
+        showFragment()
 
         DirectNumberInputScreen {
             inputField {
                 typeText("1")
             }
             ViewActions.closeSoftKeyboard()
-            searchButton.click() // crashes here
+            searchButton.click()
         }
 
         assertEquals(
-            navController.currentDestination?.id,
-            R.id.action_DirectNumberInputFragment_to_DetailExhibitFragment
+            R.id.DetailExhibitFragment,
+            navController.currentDestination?.id
+
         )
     }
 
     @Test
     fun non_existing_number_shows_error_message() {
-        val navController = TestNavHostController(
-            ApplicationProvider.getApplicationContext()
-        )
-
         showFragment()
-
-        scenario.onFragment { fragment ->
-            navController.setGraph(R.navigation.nav_graph)
-            Navigation.setViewNavController(fragment.requireView(), navController)
-        }
 
         DirectNumberInputScreen {
             inputField {
@@ -111,5 +93,10 @@ class DirectNumberInputFragmentTest {
             searchButton.click()
             errorText.isVisible()
         }
+
+        assertEquals(
+            R.id.DirectNumberInputFragment,
+            navController.currentDestination?.id
+        )
     }
 }

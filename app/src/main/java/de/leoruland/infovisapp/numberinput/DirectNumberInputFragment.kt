@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentDirectNumberInputBinding
@@ -14,6 +15,7 @@ import de.leoruland.infovisapp.states.ExhibitChoiceStateHolder
 class DirectNumberInputFragment : Fragment() {
     private var _binding: FragmentDirectNumberInputBinding? = null
     private val binding get() = _binding!!
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,19 +28,16 @@ class DirectNumberInputFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navController = findNavController()
 
         binding.errorText.visibility = View.INVISIBLE
-        binding.fabClose.setOnClickListener {
-            navController.navigateUp()
-        }
+        binding.fabClose.setOnClickListener { closePanel() }
         binding.searchButton.setOnClickListener {
             val exhibitId = binding.numberInput.text.toString()
             val exhibit = MockExhibitsRepository.getExhibit(exhibitId)
             when {
                 exhibit != null -> {
                     ExhibitChoiceStateHolder.setExhibit(exhibit)
-                    navController.navigate(R.id.action_DirectNumberInputFragment_to_DetailExhibitFragment)
+                    openExhibit()
                 }
                 exhibitId.isNotBlank() -> {
                     binding.errorText.visibility = View.VISIBLE
@@ -47,5 +46,15 @@ class DirectNumberInputFragment : Fragment() {
                 else -> binding.errorText.visibility = View.INVISIBLE
             }
         }
+    }
+
+    private fun closePanel() {
+        navController = findNavController()
+        navController.navigateUp()
+    }
+
+    private fun openExhibit() {
+        navController = findNavController()
+        navController.navigate(R.id.action_DirectNumberInputFragment_to_DetailExhibitFragment)
     }
 }
