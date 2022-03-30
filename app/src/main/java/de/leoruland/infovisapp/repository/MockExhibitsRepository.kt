@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.model
+package de.leoruland.infovisapp.repository
 
 import android.content.Context
 import android.util.Log

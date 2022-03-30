@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.controller
+package de.leoruland.infovisapp.numberinput
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.databinding.FragmentDirectNumberInputBinding
-import de.leoruland.infovisapp.model.MockExhibitsRepository
+import de.leoruland.infovisapp.repository.MockExhibitsRepository
 import de.leoruland.infovisapp.states.ExhibitChoiceStateHolder
 
 class DirectNumberInputFragment : Fragment() {
@@ -26,10 +26,11 @@ class DirectNumberInputFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navController = findNavController()
 
         binding.errorText.visibility = View.INVISIBLE
         binding.fabClose.setOnClickListener {
-            findNavController().navigateUp()
+            navController.navigateUp()
         }
         binding.searchButton.setOnClickListener {
             val exhibitId = binding.numberInput.text.toString()
@@ -37,7 +38,7 @@ class DirectNumberInputFragment : Fragment() {
             when {
                 exhibit != null -> {
                     ExhibitChoiceStateHolder.setExhibit(exhibit)
-                    findNavController().navigate(R.id.action_DirectNumberInputFragment_to_DetailExhibitFragment)
+                    navController.navigate(R.id.action_DirectNumberInputFragment_to_DetailExhibitFragment)
                 }
                 exhibitId.isNotBlank() -> {
                     binding.errorText.visibility = View.VISIBLE

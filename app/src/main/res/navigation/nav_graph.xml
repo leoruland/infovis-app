@@ -6,7 +6,7 @@
     app:startDestination="@id/ChoiceTopicFragment">
     <fragment
         android:id="@+id/ChoiceTopicFragment"
-        android:name="de.leoruland.infovisapp.controller.ChoiceTopicFragment"
+        android:name="de.leoruland.infovisapp.topicchoice.ChoiceTopicFragment"
         android:label="@string/choice_topic_title"
         tools:layout="@layout/fragment_choice_topic">
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/ChoiceExhibitFragment"
-        android:name="de.leoruland.infovisapp.controller.ChoiceExhibitFragment"
+        android:name="de.leoruland.infovisapp.exhibitchoice.ChoiceExhibitFragment"
         android:label="@string/choice_exhibit_title"
         tools:layout="@layout/fragment_choice_exhibit">
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/DetailExhibitFragment"
-        android:name="de.leoruland.infovisapp.controller.DetailExhibitFragment"
+        android:name="de.leoruland.infovisapp.exhibitdetail.DetailExhibitFragment"
         android:label="@string/detail_exhibit_title"
         tools:layout="@layout/fragment_detail_exhibit">
         <argument
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/DirectNumberInputFragment"
-        android:name="de.leoruland.infovisapp.controller.DirectNumberInputFragment"
+        android:name="de.leoruland.infovisapp.numberinput.DirectNumberInputFragment"
         android:label="@string/direct_number_input_title"
         tools:layout="@layout/fragment_direct_number_input">
         <action

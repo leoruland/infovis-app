@@ -1,7 +1,7 @@
 package de.leoruland.infovisapp.app
 
 import android.app.Application
-import de.leoruland.infovisapp.model.MockExhibitsRepository
+import de.leoruland.infovisapp.repository.MockExhibitsRepository
 
 class InfovisApplication : Application() {
 

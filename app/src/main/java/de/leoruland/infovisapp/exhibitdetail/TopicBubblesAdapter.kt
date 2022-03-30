@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.controller
+package de.leoruland.infovisapp.exhibitdetail
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
-import de.leoruland.infovisapp.model.Topic
+import de.leoruland.infovisapp.repository.Topic
 
 class TopicBubblesAdapter(private val topics: List<Topic>) :
     RecyclerView.Adapter<TopicBubblesAdapter.ViewHolder>() {

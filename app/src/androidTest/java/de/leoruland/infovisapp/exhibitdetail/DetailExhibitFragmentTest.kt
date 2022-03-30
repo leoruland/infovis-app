@@ -1,18 +1,17 @@
-package de.leoruland.infovisapp.controller
+package de.leoruland.infovisapp.exhibitdetail
 
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import de.leoruland.infovisapp.DirectNumberInputScreen
 import de.leoruland.infovisapp.R
 import org.junit.After
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class DirectNumberInputFragmentTest {
+class DetailExhibitFragmentTest {
 
-    private lateinit var scenario: FragmentScenario<DirectNumberInputFragment>
+    private lateinit var scenario: FragmentScenario<DetailExhibitFragment>
     private fun showFragment() {
         scenario = launchFragmentInContainer(null, R.style.Theme_Infovisapp_NoActionBar)
     }
@@ -25,19 +24,5 @@ class DirectNumberInputFragmentTest {
     @Test
     fun layout_shows_completely() {
         showFragment()
-
-        DirectNumberInputScreen {
-            title.isVisible()
-            errorText.isInvisible()
-            inputField.isVisible()
-            searchButton {
-                isVisible()
-                isClickable()
-            }
-            closeButton {
-                isVisible()
-                isClickable()
-            }
-        }
     }
 }

@@ -1,11 +1,11 @@
-package de.leoruland.infovisapp.controller
+package de.leoruland.infovisapp.exhibitchoice
 
 import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import de.leoruland.infovisapp.ChoiceExhibitScreen
 import de.leoruland.infovisapp.R
-import de.leoruland.infovisapp.model.Topic
+import de.leoruland.infovisapp.repository.Topic
 import de.leoruland.infovisapp.states.TopicsChoiceStateHolder
 import org.junit.After
 import org.junit.Test

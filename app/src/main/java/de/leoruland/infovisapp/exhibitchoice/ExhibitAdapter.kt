@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.controller
+package de.leoruland.infovisapp.exhibitchoice
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
-import de.leoruland.infovisapp.model.Exhibit
+import de.leoruland.infovisapp.repository.Exhibit
 import de.leoruland.infovisapp.states.ExhibitChoiceStateHolder
 
 class ExhibitAdapter(private val exhibits: List<Exhibit>) :

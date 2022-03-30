@@ -1,6 +1,6 @@
 package de.leoruland.infovisapp.states
 
-import de.leoruland.infovisapp.model.Topic
+import de.leoruland.infovisapp.repository.Topic
 
 object TopicsChoiceStateHolder {
     private var topics: List<Topic> = listOf()

@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.controller
+package de.leoruland.infovisapp.topicchoice
 
 import android.graphics.Color
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import de.leoruland.infovisapp.R
-import de.leoruland.infovisapp.model.Topic
+import de.leoruland.infovisapp.repository.Topic
 import de.leoruland.infovisapp.states.TopicsChoiceStateHolder
 
 class TopicAdapter(private val topics: List<Topic>) :

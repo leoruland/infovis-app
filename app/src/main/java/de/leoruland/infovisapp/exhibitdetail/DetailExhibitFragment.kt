@@ -1,4 +1,4 @@
-package de.leoruland.infovisapp.controller
+package de.leoruland.infovisapp.exhibitdetail
 
 import android.content.Intent
 import android.net.Uri

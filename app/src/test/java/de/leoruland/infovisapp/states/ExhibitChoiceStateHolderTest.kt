@@ -1,7 +1,7 @@
 package de.leoruland.infovisapp.states
 
-import de.leoruland.infovisapp.model.Exhibit
-import de.leoruland.infovisapp.model.Topic
+import de.leoruland.infovisapp.repository.Exhibit
+import de.leoruland.infovisapp.repository.Topic
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.osmdroid.util.GeoPoint
