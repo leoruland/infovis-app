@@ -7,7 +7,6 @@
     "location": {
       "mLatitude": 41.89474,
       "mLongitude": 12.4839
-
     },
     "description": "Rundplastik von 110cm Höhe. Abgebildet ist die Szene eine einer Tauroctonie, bei welcher ein Stier von Mithras mit der linken Hand bei den Nüstern gehalten und der Rechten erdolcht wird.",
     "topics": [
@@ -16,6 +15,9 @@
       },
       {
         "name": "Tauroctonie"
+      },
+      {
+        "name": "Rundplastik"
       },
       {
         "name": "Statue"
@@ -69,6 +71,325 @@
       },
       {
         "name": "Marmor"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1220926",
+    "number": "4",
+    "name": "Kupferstich des Aion/Zurvan",
+    "repository": "Köln, Archäologisches Institut",
+    "location": {
+      "mLatitude": 50.925053,
+      "mLongitude": 6.925517
+    },
+    "description": "Kupferstich von E. Visconti einer aufrecht auf einer Kugel stehenden Figur. Die Figur ist geflügelt und besitzt einen Löwenkopf. Vom Knöchel bis unter die Achsel windet sich eine Schlange um sie. In beiden Händen hält sie Zylinder, welche abgekürzte Gegenstände wie Stäbe, Lanzen oder Schildgriffe sein könnten. Das Bild ist mit dem Untertitel \"Mitra\" versehen. Es folgt der typischen Ikonographie des zoroastrischen Gottes Zurvan, bzw. dessen Äquivalent der graeco-römischen Mysterienkulte, Aion,",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Aion"
+      },
+      {
+        "name": "Zurvan"
+      },
+      {
+        "name": "Kupferstich"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/2169458",
+    "number": "5",
+    "name": "Reliefverziertes Mithras-Kultgefäß",
+    "repository": "Köln, Römisch-Germanisches Museum",
+    "location": {
+      "mLatitude": 50.938279,
+      "mLongitude": 6.953133
+    },
+    "description": "Reliefverziertes Kultgefäß mit Darstellung des Gottes Mithras zwischen seinen Begleitern Cautes, Cautopates und den Sonnenkreuzen. Erhaltener Henkel mit liegender Löwendarstellung. Auf dem ergänzten Henkel ist eine Schlange abgebildet, da auf dem Gefäßbauch ein Schlangenkörper erkennbar ist (Schlange und Löwe häufig im Mithras-Kontext). Figuren und Sonnenkreuze auf dem Gefäßbauch in Barbotinetechnik gearbeitet. Oxidierend gebrannt.\n\nHerkunft provinzialrömisch.\nHöhe: 26,8 cm\nDatierung: ca. 3. Jh. n. Chr.",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Gefäß"
+      },
+      {
+        "name": "Relief"
+      },
+      {
+        "name": "Terrakotta"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1071487",
+    "number": "6",
+    "name": "Kopf des Mithras",
+    "repository": "London, Museum of London",
+    "location": {
+      "mLatitude": 51.51779,
+      "mLongitude": -0.096686
+    },
+    "description": "Kopf des Mithras, bartlos, mit phrygischer Mütze. Höhe: 36,9 cm.",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Rundplastik"
+      },
+      {
+        "name": "Marmor"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1060759",
+    "number": "7",
+    "name": "Kopf des Mithras",
+    "repository": "Antiochia am Orontes, Archäologisches Museum Antakya",
+    "location": {
+      "mLatitude": 36.20655,
+      "mLongitude": 36.15722
+    },
+    "description": "Überlebensgroßer Kopf des Mithras, bartlos, mit phrygischer Mütze. Höhe: über 1,80 m.",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Rundplastik"
+      },
+      {
+        "name": "Marmor"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1068301",
+    "number": "8",
+    "name": "Relief mit Mithras",
+    "repository": "Karlsruhe, Badisches Landesmuseum",
+    "location": {
+      "mLatitude": 49.416944444444,
+      "mLongitude": 8.6919444444444
+    },
+    "description": "Relief mit Mithras und Tauroctonie, gefunden in Heidelberg-Neuenheim. Abgebildet sind Stier und Mithras im Zentrum. In den oberen beiden Ecken der Szene befinden sich links eine Büste von Helios und rechts von Luna. Am Boden sind die Tiere Krebs, Schlange und Hund mit einem Löwenkopf auf Podest abgebildet. An den Flanken stehen zwei jungen, links mit gesenkter, rechts mit erhobener Fackel, die als Cautes, bzw. Cautopates zu identifizieren sind. Umrahmt wird die Szene von einem Fries an der Linken und Rechten sowie der Oberseite welche einzelne Szenen aus der Heldengeschichte des Mithras zeigen.\n\nDatierung: ca. 2. Jh. n. Chr.\n\nHöhe 216 cm\nBreite: 275 cm",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Tauroctonie"
+      },
+      {
+        "name": "Relief"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/2341500",
+    "number": "9",
+    "name": "Votivblech für Mithras",
+    "repository": "Güglingen, Römermuseum Güglingen",
+    "location": {
+      "mLatitude": 9.00027,
+      "mLongitude": 49.066424
+    },
+    "description": "Das Fragment des Votivbleches zeigt Mithras als Stiertöter. Das Motiv wird wird von der Giebelansicht eines Tempels mit flankierenden Säulen und Gewölbe gerahmt.",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Tauroctonie"
+      },
+      {
+        "name": "Treibarbeit"
+      },
+      {
+        "name": "Silber"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1078215",
+    "number": "10",
+    "name": "Statue des Mithras Petrogenitus",
+    "repository": "Sibiu, Museum Brukenthal",
+    "location": {
+      "mLatitude": 46.06667,
+      "mLongitude": 23.58333
+    },
+    "description": "Statue der Felsgeburt des Mithras. Es ist eine gelockte Figur im Kindesalter mit phrygischer Mütze auf dem Haupt und Dolch in der rechten Hand dargestellt, welche sich aus einem Felsen erhebt. Der linke Arm ist abgebrochen. Um den Fels windet sich eine Schlange.\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 88 cm\nBreite: 55 cm\n",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Felsgeburt"
+      },
+      {
+        "name": "Statue"
+      },
+      {
+        "name": "Rundplastik"
+      },
+      {
+        "name": "Kalkstein"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1065355",
+    "number": "11",
+    "name": "Statue des Mithras Petrogenitus",
+    "repository": "Deva, Museum",
+    "location": {
+      "mLatitude": 45.51665,
+      "mLongitude": 22.786821
+    },
+    "description": "Statue der Felsgeburt des Mithras aus der Colonia Ulpia Traiana in Sarmizegetusa. Es ist die Figur eines Jünglings mit phrygischer Mütze dargestellt, welche sich aus einem Felsen erhebt. Beide Arme sind abgebrochen. Um den Fels windet sich eine Schlange.\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 67 cm\nBreite: 35 cm\nTiefe: 28 cm",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Felsgeburt"
+      },
+      {
+        "name": "Statue"
+      },
+      {
+        "name": "Rundplastik"
+      },
+      {
+        "name": "Marmor"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1118128",
+    "number": "12",
+    "name": "Statue des Mithras Petrogenitus",
+    "repository": "Köln, Römisch-Germanisches Museum",
+    "location": {
+      "mLatitude": 50.940684,
+      "mLongitude": 6.958902
+    },
+    "description": "Dargestellt ist die Felsgeburt des Mithras. Sein Oberkörper kommt aus dem Fels heraus, sein Unterkörper steckt noch im Fels. In der erhobenen Rechten trägt er den Dolch, in der Linken ein Ährenbündel.\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 36 cm\nBreite: 19 cm",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Felsgeburt"
+      },
+      {
+        "name": "Statue"
+      },
+      {
+        "name": "Rundplastik"
+      },
+      {
+        "name": "Kalkstein"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1180469",
+    "number": "13",
+    "name": "Weihaltar für Mithras und Mars",
+    "repository": "Mainz, Landesmuseum",
+    "location": {
+      "mLatitude": 49.999116,
+      "mLongitude": 8.272276
+    },
+    "description": "Weihealtar mit Sockel und Gesims.\n\nInschrift: D(eo) I(nvicto) M(ithrae) / et Marti / Secundini/us Amantius /5 cornicu(larius) / praef(ecti) leg(ionis) / XXII permi/ttente Pri/mulo patre /10 ex voto pos/uit l(ibens) l(aetus) m(erito)\n\nDem unbesiegbaren Gott Mithras und dem Mars (geweiht). Secundinius Amantius, Adjutant des Legionspräfekten der 22. Legion, mit Erlaubnis des Pater Primulus gemäß einem Gelübde gern und freudig verdientermaßen (dies errichtet).\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 90 cm\nBreite: 47 cm\nTiefe: 36 cm",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Altar"
+      },
+      {
+        "name": "Relief"
+      },
+      {
+        "name": "Marmor"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1180469",
+    "number": "14",
+    "name": "Weihealtar für Mithras",
+    "repository": "Stuttgart, Landesmuseum Württemberg",
+    "location": {
+      "mLatitude": 48.70233,
+      "mLongitude": 12.02717
+    },
+    "description": "Weihealtar mit Sockel und Gesims. Weihung des Legionssoldaten Publius Aelius Vocco für Mithras.\n\nInschrift: Inschrift: Invicto / Mitrae /P(ublius) Ael(ius) Voc/co mil(es) l(egionis) XXII /P(rimigeniae) p(iae) f(idelis) v(otum) s(olvit) l(ibens) l(aetus) /m(erito)\n\nDem unbesiegbarem Mithras hat Publius Aelius Vocco, Soldat der 22. Legion, den Erstgeschaffenen, Frommen, Treuen (den Stein aufstellen lassen und damit) sein Gelübde freiwillig und freudig eingelöst.\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 90 cm\nBreite: 47 cm\nTiefe: 36 cm",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Altar"
+      },
+      {
+        "name": "Relief"
+      },
+      {
+        "name": "Marmor"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1081190",
+    "number": "15",
+    "name": "Fragment mit Stier, Selene und Cautopates",
+    "repository": "Rom, Museo Gregoriano Profano ex Lateranense",
+    "location": {
+      "mLatitude": 41.906368,
+      "mLongitude": 12.453404
+    },
+    "description": "Fragment eines Reliefs auf dem ein Stier, sowie ein Frauenkopf mit Dutt über einer Mondsichel als Selene sowie ein Jüngling mit phrygischer Mütze, faltenwerfendem Gewand und Hose sowie nach unten gerichteter Fackel als Cautopates abgebildet sind.",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Relief"
+      },
+      {
+        "name": "Marmor"
+      }
+    ]
+  },
+  {
+    "id": "https://arachne.dainst.org/entity/1147654",
+    "number": "16",
+    "name": "Kopf des Apollon-Mithras-Helios-Hermes",
+    "repository": "Adiyaman (Provinz), Nemrut Dagi",
+    "location": {
+      "mLatitude": 37.98644,
+      "mLongitude": 38.76095
+    },
+    "description": "Überlebensgroßer Kopf des synkretistischen Gottes Apollon-Mithras-Helios-Hermes aus dem Heiligtum des zweiten Herrschers von Kommagene, Antiochos I.\n\nDatierung: 1. Jh. v. Chr.",
+    "topics": [
+      {
+        "name": "Mithras"
+      },
+      {
+        "name": "Rundplastik"
+      },
+      {
+        "name": "Apollon"
       }
     ]
   }
