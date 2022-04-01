@@ -17,11 +17,11 @@ import de.leoruland.infovisapp.states.TopicsChoiceStateHolder
 import org.osmdroid.config.Configuration
 import org.osmdroid.library.BuildConfig
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.util.BoundingBox
 import org.osmdroid.util.GeoPoint
+import org.osmdroid.views.CustomZoomButtonsController
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
-import org.osmdroid.views.overlay.MinimapOverlay
-
 
 class DetailExhibitFragment : Fragment() {
     private var _binding: FragmentDetailExhibitBinding? = null
@@ -77,25 +77,29 @@ class DetailExhibitFragment : Fragment() {
     private fun setupMap() {
         Configuration.getInstance().userAgentValue = BuildConfig.APPLICATION_ID
         map = binding.map
-        map.setTileSource(TileSourceFactory.WIKIMEDIA)
-        map.setBuiltInZoomControls(false)
-        exhibit?.let { setMapCenter(it.location) }
+        map.apply {
+            exhibit?.let {
+                setTileSource(TileSourceFactory.WIKIMEDIA)
+                setMultiTouchControls(true)
+                setScrollableAreaLimitDouble(
+                    BoundingBox(
+                        exhibit.location.latitude,
+                        exhibit.location.longitude,
+                        exhibit.location.latitude,
+                        exhibit.location.longitude
+                    )
+                )
+                zoomController.setVisibility(CustomZoomButtonsController.Visibility.NEVER)
+            }
+            exhibit?.let { setMapCenter(it.location) }
+        }
         setupMarker()
-        setupMinimap()
     }
 
     private fun setMapCenter(geoPoint: GeoPoint = GeoPoint(52.48904896922605, 13.394676226814221)) {
         val mapController = map.controller
-        mapController.setZoom(7.0)
+        mapController.setZoom(5.0)
         mapController.setCenter(geoPoint);
-    }
-
-    private fun setupMinimap() {
-        val minimapOverlay = MinimapOverlay(requireContext(), map.tileRequestCompleteHandler)
-        minimapOverlay.width = 400
-        minimapOverlay.height = 200
-        minimapOverlay.setTileSource(TileSourceFactory.WIKIMEDIA)
-        map.overlays.add(minimapOverlay)
     }
 
     private fun setupMarker() {
