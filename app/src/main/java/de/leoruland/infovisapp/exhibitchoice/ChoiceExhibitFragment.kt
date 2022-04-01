@@ -29,10 +29,16 @@ class ChoiceExhibitFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupList()
+        setupActionListeners()
+    }
 
+    private fun setupList() {
         binding.exhibitRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding.exhibitRecyclerView.adapter = exhibitAdapter
+    }
 
+    private fun setupActionListeners() {
         binding.fabBack.setOnClickListener {
             findNavController().navigate(R.id.action_ChoiceExhibitFragment_to_ChoiceTopicFragment)
         }

@@ -33,10 +33,16 @@ class ChoiceTopicFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupList()
+        setupActionListeners()
+    }
 
+    private fun setupList() {
         binding.topicRecyclerView.layoutManager = LinearLayoutManager(activity)
         binding.topicRecyclerView.adapter = topicAdapter
+    }
 
+    private fun setupActionListeners() {
         binding.fabNext.setOnClickListener {
             if (!TopicsChoiceStateHolder.isEmpty()) {
                 findNavController().navigate(R.id.action_ChoiceTopicFragment_to_ChoiceExhibitFragment)

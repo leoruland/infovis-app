@@ -5,7 +5,9 @@
     android:id="@+id/topic_bubble"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/base_padding"
+    android:layout_marginLeft="@dimen/half_padding"
+    android:layout_marginRight="@dimen/half_padding"
+    android:layout_marginBottom="@dimen/base_padding"
 
     app:cardBackgroundColor="@color/htw_secondary_grey"
 
@@ -25,7 +27,7 @@
             android:layout_marginEnd="@dimen/padding_x2"
             android:layout_marginBottom="@dimen/base_padding"
             android:textColor="@color/black"
-            android:textSize="10sp"
+            android:textSize="@dimen/small_text_size"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

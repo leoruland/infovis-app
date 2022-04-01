@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.RequiresPermission
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -44,10 +43,27 @@ class DetailExhibitFragment : Fragment() {
         return binding.root
     }
 
-    @RequiresPermission(anyOf = ["android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"])
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupLabels()
+        setupBubbles()
+        setupMap()
+        setupActionListeners()
+    }
 
+    private fun setupLabels() {
+        exhibit?.let {
+            binding.exhibitTitle.text =
+                String.format(getString(R.string.detail_exhibit_item_title), it.number, it.name)
+            binding.exhibitRepositoryLabel.text =
+                String.format(getString(R.string.detail_exhibit_repository), it.repository)
+            binding.exhibitFindSpotLabel.text = getString(R.string.detail_exhibit_find_spot)
+            binding.exhibitDescription.text = it.description
+            binding.fabOpen.setOnClickListener { openLink(exhibit.id) }
+        }
+    }
+
+    private fun setupBubbles() {
         binding.topicBubblesRecyclerView.layoutManager =
             GridLayoutManager(
                 requireContext(),
@@ -56,34 +72,6 @@ class DetailExhibitFragment : Fragment() {
                 false
             )
         binding.topicBubblesRecyclerView.adapter = topicBubblesAdapter
-
-        exhibit?.let {
-            binding.exhibitTitle.text =
-                String.format(getString(R.string.detail_exhibit_item_title), it.number, it.name)
-            binding.exhibitRepository.text = it.repository
-            binding.exhibitDescription.text = it.description
-            binding.fabOpen.setOnClickListener { openLink(exhibit.id) }
-        }
-        binding.fabBack.setOnClickListener {
-            if (TopicsChoiceStateHolder.isEmpty()) {
-                findNavController().navigate(R.id.action_DetailExhibitFragment_to_ChoiceTopicFragment)
-            } else findNavController().navigate(R.id.action_DetailExhibitFragment_to_ChoiceExhibitFragment)
-        }
-        binding.fabNumberinput.setOnClickListener {
-            findNavController().navigate(R.id.action_DetailExhibitFragment_to_DirectNumberInputFragment)
-        }
-
-        setupMap()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        map.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        map.onPause()
     }
 
     private fun setupMap() {
@@ -119,10 +107,31 @@ class DetailExhibitFragment : Fragment() {
         map.invalidate()
     }
 
+    private fun setupActionListeners() {
+        binding.fabBack.setOnClickListener {
+            if (TopicsChoiceStateHolder.isEmpty()) {
+                findNavController().navigate(R.id.action_DetailExhibitFragment_to_ChoiceTopicFragment)
+            } else findNavController().navigate(R.id.action_DetailExhibitFragment_to_ChoiceExhibitFragment)
+        }
+        binding.fabNumberinput.setOnClickListener {
+            findNavController().navigate(R.id.action_DetailExhibitFragment_to_DirectNumberInputFragment)
+        }
+    }
+
     private fun openLink(url: String) {
         if (url.isNotBlank()) {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(browserIntent)
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        map.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        map.onPause()
     }
 }

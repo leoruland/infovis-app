@@ -3,8 +3,9 @@
     <string name="choice_topic_title">Themenwahl</string>
     <string name="choice_exhibit_title">Exponatswahl</string>
     <string name="detail_exhibit_title">Exponat-Detail</string>
-    <string name="detail_exhibit_repository">Exponat-Aufbewahrungsort</string>
-    <string name="detail_exhibit_item_title">Exponat Nr. %s\n%s</string>
+    <string name="detail_exhibit_repository">Aufbewahrungsort: %s</string>
+    <string name="detail_exhibit_find_spot">Fundort:</string>
+    <string name="detail_exhibit_item_title">#%s: %s</string>
     <string name="direct_number_input_title">Exponatsnummer eingeben</string>
     <string name="enter_button_text">Eingabe</string>
     <string name="error_object_not_found">Das gesuchte Exponat mit der Nummer %s kann nicht gefunden werden.</string>

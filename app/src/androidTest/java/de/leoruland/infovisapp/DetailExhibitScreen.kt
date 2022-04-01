@@ -12,7 +12,7 @@ import org.hamcrest.Matcher
 
 object DetailExhibitScreen : Screen<DetailExhibitScreen>() {
     val title = KTextView { withId(R.id.exhibit_title) }
-    val repositoryName = KTextView { withId(R.id.exhibit_repository) }
+    val repositoryName = KTextView { withId(R.id.exhibit_repository_label) }
     val map = KView { withId(R.id.map) }
     val description = KTextView { withId(R.id.exhibit_description) }
     val backButton = KButton { withId(R.id.fab_back) }

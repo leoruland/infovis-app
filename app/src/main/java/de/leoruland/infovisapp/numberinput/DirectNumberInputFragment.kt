@@ -28,8 +28,15 @@ class DirectNumberInputFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupLabels()
+        setupActionListeners()
+    }
 
+    private fun setupLabels() {
         binding.errorText.visibility = View.INVISIBLE
+    }
+
+    private fun setupActionListeners() {
         binding.fabClose.setOnClickListener { closePanel() }
         binding.searchButton.setOnClickListener {
             val exhibitId = binding.numberInput.text.toString()
@@ -41,7 +48,8 @@ class DirectNumberInputFragment : Fragment() {
                 }
                 exhibitId.isNotBlank() -> {
                     binding.errorText.visibility = View.VISIBLE
-                    binding.errorText.text = String.format(getString(R.string.error_object_not_found), exhibitId)
+                    binding.errorText.text =
+                        String.format(getString(R.string.error_object_not_found), exhibitId)
                 }
                 else -> binding.errorText.visibility = View.INVISIBLE
             }

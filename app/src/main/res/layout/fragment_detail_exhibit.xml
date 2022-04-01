@@ -21,33 +21,43 @@
         tools:text="@string/detail_exhibit_title" />
 
     <TextView
-        android:id="@+id/exhibit_repository"
+        android:id="@+id/exhibit_repository_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/base_padding"
+        android:layout_marginStart="@dimen/padding_x4"
+        android:layout_marginEnd="@dimen/half_padding"
+        android:layout_marginBottom="@dimen/base_padding"
         android:textSize="@dimen/standard_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/exhibit_title"
         tools:text="@string/detail_exhibit_repository" />
+
+    <TextView
+        android:id="@+id/exhibit_find_spot_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_x4"
+        android:textSize="@dimen/standard_text_size"
+        app:layout_constraintTop_toBottomOf="@id/exhibit_repository_label"
+        tools:text="@string/detail_exhibit_find_spot" />
 
     <org.osmdroid.views.MapView
         android:id="@+id/map"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="@dimen/padding_x4"
-        android:layout_marginTop="@dimen/padding_x2"
+        android:layout_marginTop="@dimen/half_padding"
         android:layout_marginEnd="@dimen/padding_x4"
-        android:layout_marginBottom="@dimen/padding_x2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/exhibit_repository" />
+        app:layout_constraintTop_toBottomOf="@id/exhibit_find_spot_label" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/topicBubblesRecyclerView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/padding_x2"
+        android:layout_marginTop="@dimen/half_padding"
+        android:layout_marginBottom="@dimen/padding_x2"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/map" />
@@ -63,9 +73,9 @@
             android:id="@+id/exhibit_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/padding_x2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/base_padding"
+            android:layout_marginEnd="@dimen/base_padding"
+            android:textSize="@dimen/standard_text_size"
             tools:text="Description od the object. It is a long description and very descriptive." />
     </ScrollView>
 
