@@ -9,7 +9,6 @@ import com.agoda.kakao.text.KButton
 import com.agoda.kakao.text.KTextView
 import org.hamcrest.Matcher
 
-
 object DetailExhibitScreen : Screen<DetailExhibitScreen>() {
     val title = KTextView { withId(R.id.exhibit_title) }
     val repositoryName = KTextView { withId(R.id.exhibit_repository_label) }

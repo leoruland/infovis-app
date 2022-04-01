@@ -10,6 +10,7 @@ import de.leoruland.infovisapp.ChoiceExhibitScreen
 import de.leoruland.infovisapp.ChoiceTopicScreen
 import de.leoruland.infovisapp.R
 import de.leoruland.infovisapp.data.Topic
+import de.leoruland.infovisapp.repository.MockExhibitsRepository
 import de.leoruland.infovisapp.states.TopicsChoiceStateHolder
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -23,14 +24,22 @@ class ChoiceExhibitFragmentTest {
     private lateinit var navController: TestNavHostController
 
     private fun showFragment() {
+        // Navigationscontroller für Testumgebung setzen
         navController = TestNavHostController(
             ApplicationProvider.getApplicationContext()
         )
+        // Testexponate laden
+        MockExhibitsRepository.loadExhibits(
+            ApplicationProvider.getApplicationContext(),
+            "testExhibits.json"
+        )
+        // Fragment initialisieren
         scenario = launchFragmentInContainer(null, R.style.Theme_Infovisapp_NoActionBar) {
+            // Setup der Navigation
             navController.setGraph(R.navigation.nav_graph)
             navController.setCurrentDestination(R.id.ChoiceExhibitFragment)
-
             ChoiceExhibitFragment().also { fragment ->
+                // Navigation initialisieren
                 fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {
                         Navigation.setViewNavController(fragment.requireView(), navController)

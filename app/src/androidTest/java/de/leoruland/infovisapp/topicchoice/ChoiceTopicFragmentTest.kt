@@ -18,6 +18,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import de.leoruland.infovisapp.ChoiceTopicScreen
 import de.leoruland.infovisapp.R
+import de.leoruland.infovisapp.repository.MockExhibitsRepository
 import de.leoruland.infovisapp.states.TopicsChoiceStateHolder
 import org.hamcrest.Description
 import org.hamcrest.Matcher
@@ -28,7 +29,6 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 
-
 @RunWith(AndroidJUnit4::class)
 class ChoiceTopicFragmentTest {
 
@@ -36,14 +36,22 @@ class ChoiceTopicFragmentTest {
     private lateinit var navController: TestNavHostController
 
     private fun showFragment() {
+        // Navigationscontroller für Testumgebung setzen
         navController = TestNavHostController(
             ApplicationProvider.getApplicationContext()
         )
+        // Testthemen laden
+        MockExhibitsRepository.loadTopics(
+            ApplicationProvider.getApplicationContext(),
+            "testExhibits.json"
+        )
+        // Fragment initialisieren
         scenario = launchFragmentInContainer(null, R.style.Theme_Infovisapp_NoActionBar) {
+            // Setup der Navigation
             navController.setGraph(R.navigation.nav_graph)
             navController.setCurrentDestination(R.id.ChoiceTopicFragment)
-
             ChoiceTopicFragment().also { fragment ->
+                // Navigation initialisieren
                 fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {
                         Navigation.setViewNavController(fragment.requireView(), navController)

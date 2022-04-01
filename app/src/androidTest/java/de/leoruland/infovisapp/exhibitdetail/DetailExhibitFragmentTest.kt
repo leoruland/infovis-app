@@ -40,16 +40,19 @@ class DetailExhibitFragmentTest {
         )
 
     private fun showFragment() {
+        // Beispielexponat setzen
         ExhibitChoiceStateHolder.setExhibit(testExhibit)
-
+        // Navigationscontroller für Testumgebung setzen
         navController = TestNavHostController(
             ApplicationProvider.getApplicationContext()
         )
+        // Fragment initialisieren
         scenario = launchFragmentInContainer(null, R.style.Theme_Infovisapp_NoActionBar) {
+            // Setup der Navigation
             navController.setGraph(R.navigation.nav_graph)
             navController.setCurrentDestination(R.id.DetailExhibitFragment)
-
             DetailExhibitFragment().also { fragment ->
+                // Navigation initialisieren
                 fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {
                         Navigation.setViewNavController(fragment.requireView(), navController)
@@ -121,8 +124,10 @@ class DetailExhibitFragmentTest {
 
     @Test
     fun open_button_starts_intent() {
+        val viewUrlAction = "android.intent.action.VIEW"
         Intents.init()
-        intending(hasAction("android.intent.action.VIEW")).respondWith(
+        // Intent abfangen, welches zum Öffnen einer URL im Browser verwendet wird
+        intending(hasAction(viewUrlAction)).respondWith(
             Instrumentation.ActivityResult(
                 0,
                 Intent()
@@ -132,7 +137,8 @@ class DetailExhibitFragmentTest {
         showFragment()
 
         DetailExhibitScreen.openBrowser.click()
-        intended(hasAction("android.intent.action.VIEW"))
+        // Intent prüfen, welches zum Öffnen einer URL im Browser verwendet wird
+        intended(hasAction(viewUrlAction))
         Intents.release()
     }
 }

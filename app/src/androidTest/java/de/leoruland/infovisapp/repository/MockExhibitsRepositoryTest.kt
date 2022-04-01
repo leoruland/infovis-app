@@ -72,11 +72,13 @@ class MockExhibitsRepositoryTest {
     @Test
     fun getExhibits_list_not_inclusive() {
         MockExhibitsRepository.loadExhibits(testContext, "testExhibits.json")
-        val allExhibits = MockExhibitsRepository.getExhibits(listOf(
-            Topic("Mithras"),
-            Topic("Statue")
-        ), false)
-        assertEquals(1,allExhibits.size)
+        val allExhibits = MockExhibitsRepository.getExhibits(
+            listOf(
+                Topic("Mithras"),
+                Topic("Statue")
+            ), false
+        )
+        assertEquals(1, allExhibits.size)
 
         val firstExhibit = allExhibits.first()
 
@@ -110,6 +112,6 @@ class MockExhibitsRepositoryTest {
     fun getExhibit_not_existing_returns_null() {
         MockExhibitsRepository.loadExhibits(testContext, "testExhibits.json")
         val exhibit = MockExhibitsRepository.getExhibit("11")
-        assertEquals(exhibit, null)
+        assertEquals(null, exhibit)
     }
 }

@@ -21,14 +21,17 @@ class DirectNumberInputFragmentTest {
     private lateinit var navController: TestNavHostController
 
     private fun showFragment() {
+        // Navigationscontroller für Testumgebung setzen
         navController = TestNavHostController(
             ApplicationProvider.getApplicationContext()
         )
+        // Fragment initialisieren
         scenario = launchFragmentInContainer(null, R.style.Theme_Infovisapp_NoActionBar) {
+            // Setup der Navigation
             navController.setGraph(R.navigation.nav_graph)
             navController.setCurrentDestination(R.id.DirectNumberInputFragment)
-
             DirectNumberInputFragment().also { fragment ->
+                // Navigation initialisieren
                 fragment.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {
                         Navigation.setViewNavController(fragment.requireView(), navController)
