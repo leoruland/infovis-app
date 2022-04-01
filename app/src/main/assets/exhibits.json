@@ -196,8 +196,8 @@
     "name": "Votivblech für Mithras",
     "repository": "Güglingen, Römermuseum Güglingen",
     "location": {
-      "mLatitude": 9.00027,
-      "mLongitude": 49.066424
+      "mLatitude": 49.066424,
+      "mLongitude": 9.00027
     },
     "description": "Das Fragment des Votivbleches zeigt Mithras als Stiertöter. Das Motiv wird wird von der Giebelansicht eines Tempels mit flankierenden Säulen und Gewölbe gerahmt.",
     "topics": [
@@ -224,7 +224,7 @@
       "mLatitude": 46.06667,
       "mLongitude": 23.58333
     },
-    "description": "Statue der Felsgeburt des Mithras. Es ist eine gelockte Figur im Kindesalter mit phrygischer Mütze auf dem Haupt und Dolch in der rechten Hand dargestellt, welche sich aus einem Felsen erhebt. Der linke Arm ist abgebrochen. Um den Fels windet sich eine Schlange.\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 88 cm\nBreite: 55 cm\n",
+    "description": "Statue der Felsgeburt des Mithras. Es ist eine gelockte Figur im Kindesalter mit phrygischer Mütze auf dem Haupt und Dolch in der rechten Hand dargestellt, welche sich aus einem Felsen erhebt. Der linke Arm ist abgebrochen. Um den Fels windet sich eine Schlange.\n\nDatierung: 2.-3. Jh. n. Chr.\n\nHöhe: 88 cm\nBreite: 55 cm\n",
     "topics": [
       {
         "name": "Mithras"
@@ -252,7 +252,7 @@
       "mLatitude": 45.51665,
       "mLongitude": 22.786821
     },
-    "description": "Statue der Felsgeburt des Mithras aus der Colonia Ulpia Traiana in Sarmizegetusa. Es ist die Figur eines Jünglings mit phrygischer Mütze dargestellt, welche sich aus einem Felsen erhebt. Beide Arme sind abgebrochen. Um den Fels windet sich eine Schlange.\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 67 cm\nBreite: 35 cm\nTiefe: 28 cm",
+    "description": "Statue der Felsgeburt des Mithras aus der Colonia Ulpia Traiana in Sarmizegetusa. Es ist die Figur eines Jünglings mit phrygischer Mütze dargestellt, welche sich aus einem Felsen erhebt. Beide Arme sind abgebrochen. Um den Fels windet sich eine Schlange.\n\nDatierung: 2.-3. Jh. n. Chr.\n\nHöhe: 67 cm\nBreite: 35 cm\nTiefe: 28 cm",
     "topics": [
       {
         "name": "Mithras"
@@ -280,7 +280,7 @@
       "mLatitude": 50.940684,
       "mLongitude": 6.958902
     },
-    "description": "Dargestellt ist die Felsgeburt des Mithras. Sein Oberkörper kommt aus dem Fels heraus, sein Unterkörper steckt noch im Fels. In der erhobenen Rechten trägt er den Dolch, in der Linken ein Ährenbündel.\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 36 cm\nBreite: 19 cm",
+    "description": "Dargestellt ist die Felsgeburt des Mithras. Sein Oberkörper kommt aus dem Fels heraus, sein Unterkörper steckt noch im Fels. In der erhobenen Rechten trägt er den Dolch, in der Linken ein Ährenbündel.\n\nDatierung: 2.-3. Jh. n. Chr.\n\nHöhe: 36 cm\nBreite: 19 cm",
     "topics": [
       {
         "name": "Mithras"
@@ -308,7 +308,7 @@
       "mLatitude": 49.999116,
       "mLongitude": 8.272276
     },
-    "description": "Weihealtar mit Sockel und Gesims.\n\nInschrift: D(eo) I(nvicto) M(ithrae) / et Marti / Secundini/us Amantius /5 cornicu(larius) / praef(ecti) leg(ionis) / XXII permi/ttente Pri/mulo patre /10 ex voto pos/uit l(ibens) l(aetus) m(erito)\n\nDem unbesiegbaren Gott Mithras und dem Mars (geweiht). Secundinius Amantius, Adjutant des Legionspräfekten der 22. Legion, mit Erlaubnis des Pater Primulus gemäß einem Gelübde gern und freudig verdientermaßen (dies errichtet).\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 90 cm\nBreite: 47 cm\nTiefe: 36 cm",
+    "description": "Weihealtar mit Sockel und Gesims.\n\nInschrift: D(eo) I(nvicto) M(ithrae) / et Marti / Secundini/us Amantius /5 cornicu(larius) / praef(ecti) leg(ionis) / XXII permi/ttente Pri/mulo patre /10 ex voto pos/uit l(ibens) l(aetus) m(erito)\n\nDem unbesiegbaren Gott Mithras und dem Mars (geweiht). Secundinius Amantius, Adjutant des Legionspräfekten der 22. Legion, mit Erlaubnis des Pater Primulus gemäß einem Gelübde gern und freudig verdientermaßen (dies errichtet).\n\nDatierung: 2.-3. Jh. n. Chr.\n\nHöhe: 90 cm\nBreite: 47 cm\nTiefe: 36 cm",
     "topics": [
       {
         "name": "Mithras"
@@ -333,7 +333,7 @@
       "mLatitude": 48.70233,
       "mLongitude": 12.02717
     },
-    "description": "Weihealtar mit Sockel und Gesims. Weihung des Legionssoldaten Publius Aelius Vocco für Mithras.\n\nInschrift: Inschrift: Invicto / Mitrae /P(ublius) Ael(ius) Voc/co mil(es) l(egionis) XXII /P(rimigeniae) p(iae) f(idelis) v(otum) s(olvit) l(ibens) l(aetus) /m(erito)\n\nDem unbesiegbarem Mithras hat Publius Aelius Vocco, Soldat der 22. Legion, den Erstgeschaffenen, Frommen, Treuen (den Stein aufstellen lassen und damit) sein Gelübde freiwillig und freudig eingelöst.\n\nDatierung:2.-3. Jh. n. Chr.\n\nHöhe: 90 cm\nBreite: 47 cm\nTiefe: 36 cm",
+    "description": "Weihealtar mit Sockel und Gesims. Weihung des Legionssoldaten Publius Aelius Vocco für Mithras.\n\nInschrift: Inschrift: Invicto / Mitrae /P(ublius) Ael(ius) Voc/co mil(es) l(egionis) XXII /P(rimigeniae) p(iae) f(idelis) v(otum) s(olvit) l(ibens) l(aetus) /m(erito)\n\nDem unbesiegbarem Mithras hat Publius Aelius Vocco, Soldat der 22. Legion, den Erstgeschaffenen, Frommen, Treuen (den Stein aufstellen lassen und damit) sein Gelübde freiwillig und freudig eingelöst.\n\nDatierung: 2.-3. Jh. n. Chr.\n\nHöhe: 90 cm\nBreite: 47 cm\nTiefe: 36 cm",
     "topics": [
       {
         "name": "Mithras"
